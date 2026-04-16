@@ -13,17 +13,17 @@ const Home = () => {
   {
     name: "Pearl Millet Gruel",
     seller: "Nature Basket",
-    image: "/images/a.jpeg"
+    image: `${import.meta.env.BASE_URL}images/a.jpeg`
   },
   {
     name: "kulipaniyaram",
     seller: "A2V",
-    image: "/images/b.jpeg"
+    image: `${import.meta.env.BASE_URL}images/b.jpeg`
   },
   {
     name: "Pongal",
     seller: "QuickBite Kitchens",
-    image: "/images/d.jpeg"
+    image: `${import.meta.env.BASE_URL}images/d.jpeg`
   }
 ];
 
@@ -299,7 +299,7 @@ const Home = () => {
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="logo">
-          <img src="/images/c.jpeg" alt="Logo" />
+          <img src={`${import.meta.env.BASE_URL}images/c.jpeg`} alt="Logo" />
         </div>
 
         <ul className="nav-links">
