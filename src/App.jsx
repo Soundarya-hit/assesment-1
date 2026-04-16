@@ -8,7 +8,7 @@ const Home = () => {
   {
     name: "Full meals",
     seller: "Green hotel",
-    <img src={import.meta.env.BASE_URL + "images/photo.jpg"} />
+    image: "/images/h.jpeg"
   },
   {
     name: "Pearl Millet Gruel",
