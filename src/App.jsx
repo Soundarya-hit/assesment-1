@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Jobslist from "./Jobslist";
-
+import SellerDashboard from "./Seller_dashboard";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [page, setPage] = useState("home");
@@ -10,11 +10,14 @@ const Home = () => {
     { name: "Product 1", seller: "Seller 1", image: "" },
     { name: "Product 2", seller: "Seller 2", image: "" },
     { name: "Product 3", seller: "Seller 3", image: "" },
-    { name: "Product 4", seller: "Seller 4", image: "" }
+    { name: "Product 4", seller: "Seller 4", image: "" },
+    { name: "Product 5", seller: "Seller 3", image: "" },
+    { name: "Product 6", seller: "Seller 4", image: "" }
   ];
 
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase())
+  
   );
 
   return (
@@ -23,167 +26,209 @@ const Home = () => {
       {/* BACKGROUND */}
       {darkMode && <div className="stars"></div>}
       {!darkMode && <div className="sun"></div>}
+      {page === "home" && <Home setPage={setPage} />}
+
+    {page === "jobs" && <Jobslist setPage={setPage} />}
+
+    {page === "dashboard" && <SellerDashboard />}
 
       <style>{`
-        html, body, #root {
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
+        
+html, body, #root {
+  width: 100%;
+  min-height: 100%;   /* ✅ FIX */
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow-x: hidden; /* ✅ prevent side scroll */
+}
 
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Poppins', sans-serif;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-        @keyframes starsMove {
-          from { transform: translateY(0px); }
-          to { transform: translateY(-2000px); }
-        }
+/* 🔥 IMPROVED STAR ANIMATION (supports long pages) */
+@keyframes starsMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3000px); } /* ✅ bigger movement */
+}
 
-        .stars {
-          position: fixed;
-          width: 100%;
-          height: 200%;
-          background: url("https://www.transparenttextures.com/patterns/stardust.png");
-          animation: starsMove 60s linear infinite;
-          z-index: 0;
-          opacity: 0.6;
-        }
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* ✅ full screen only */
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  animation: starsMove 120s linear infinite; /* ✅ slower + smoother */
+  z-index: 0;
+  opacity: 0.6;
+}
 
-        @keyframes sunPulse {
-          0%,100% { transform: scale(1); opacity: 0.7; }
-          50% { transform: scale(1.2); opacity: 1; }
-        }
+/* 🌞 SUN */
+@keyframes sunPulse {
+  0%,100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
 
-        .sun {
-          position: fixed;
-          top: -150px;
-          right: -150px;
-          width: 400px;
-          height: 400px;
-          background: radial-gradient(circle, #fde047, #facc15, transparent 70%);
-          filter: blur(40px);
-          animation: sunPulse 6s infinite;
-          z-index: 0;
-        }
+.sun {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #fde047, #facc15, transparent 70%);
+  filter: blur(40px);
+  animation: sunPulse 6s infinite;
+  z-index: 0;
+}
 
-        .dark {
-          background: radial-gradient(circle at 20% 30%, #1e293b, #020617);
-          min-height: 100vh;
-          color: white;
-          position: relative;
-        }
+/* ✅ MAIN CONTAINER FIX */
+.dark {
+  background: radial-gradient(circle at 20% 30%, #1e293b, #020617);
+  min-height: 100vh;
+  height: auto; /* ✅ allow infinite growth */
+  color: white;
+  position: relative;
+}
 
-        .light {
-          background: linear-gradient(to bottom, #fefce8, #e0f2fe);
-          min-height: 100vh;
-          color: black;
-          position: relative;
-        }
+.light {
+  background: linear-gradient(to bottom, #fefce8, #e0f2fe);
+  min-height: 100vh;
+  height: auto; /* ✅ allow infinite growth */
+  color: black;
+  position: relative;
+}
 
-        .navbar {
-          display: flex;
-          justify-content: space-between;
-          padding: 15px 40px;
-          backdrop-filter: blur(12px);
-          position: relative;
-          z-index: 1;
-        }
+/* ✅ KEEP CONTENT ABOVE BACKGROUND */
+.navbar,
+.section-box {
+  position: relative;
+  z-index: 1;
+}
 
-        .nav-links {
-          display: flex;
-          gap: 50px;
-          list-style: none;
-        }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  backdrop-filter: blur(12px);
+}
 
-        .nav-links li {
-          cursor: pointer;
-        }
+.nav-links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin-left: auto;
+}
 
-        .toggle-btn {
-          background: linear-gradient(135deg, #f594ed, #eee01a);
-          border: none;
-          padding: 6px 14px;
-          border-radius: 20px;
-          cursor: pointer;
-          color: white;
-        }
+.nav-links li {
+  cursor: pointer;
+}
 
-        .section-box {
-          width: 90%;
-          margin: 20px auto;
-          padding: 20px;
-          border-radius: 10px;
-          background: rgba(148, 153, 158, 0.9);
-          backdrop-filter: blur(12px);
-          position: relative;
-          z-index: 1;
-        }
+.toggle-btn {
+  background: linear-gradient(135deg, #f594ed, #eee01a);
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
 
-        .hero {
-          text-align: center;
-        }
+/* SECTION */
+.section-box {
+  width: 100%;
+  margin: 60px auto;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  background: transparent;
+}
 
-        .hero h1 {
-          font-size: 40px;
-          color: orange;
-          margin-bottom: 25px;
-        }
+/* SEARCH SECTION */
+.search-section {
+  background: rgba(148, 153, 158, 0.9);
+}
 
-        .search-box {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-        }
+.search-section h1 {
+  font-size: 40px;
+  color: orange;
+  margin-bottom: 25px;
+}
 
-        .search-box input {
-          padding: 12px;
-          width: 280px;
-          border-radius: 30px;
-          border: none;
-          outline: none;
-        }
+.hero {
+  text-align: center;
+}
 
-        .search-box button {
-          padding: 12px 20px;
-          border-radius: 30px;
-          border: none;
-          background: linear-gradient(135deg, #ce0ce7, #f3f709);
-          color: white;
-          cursor: pointer;
-        }
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
-        .categories {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
+.search-box input {
+  padding: 12px;
+  width: 280px;
+  border: none;
+  outline: none;
+}
 
-        .category {
-          padding: 8px 16px;
-          border-radius: 20px;
-          background: rgba(255,255,255,0.3);
-        }
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  background: linear-gradient(135deg, #ce0ce7, #f3f709);
+  color: white;
+  cursor: pointer;
+}
 
-        .products {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 20px;
-        }
-       .product-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 14px;
-  padding: 12px 15px;
+/* CATEGORY */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
+.category {
+  padding: 16px 78px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* TITLE */
+.section-title {
   display: flex;
   align-items: center;
+  text-align: center;
+  font-size: 42px;
+  color: orange;
+  margin-bottom: 25px;
+}
 
-  justify-content: flex-start; /* important */
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: rgba(27, 228, 211, 0.9);
+  margin: 0 15px;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.9);
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
@@ -191,43 +236,36 @@ const Home = () => {
   background: rgba(30,41,59,0.8);
 }
 
-/* LEFT SIDE IMAGE */
 .product-image {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
   background: #ccc;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-  flex-shrink: 0;
 }
 
-/* IMAGE INSIDE */
 .product-image img {
   width: 40px;
   height: 40px;
-  object-fit: cover;
 }
 
-/* RIGHT SIDE TEXT */
 .product-info {
   display: flex;
   flex-direction: column;
 }
-        
-        .product-name {
-          font-weight: 600;
-          font-size: 14px;
-        }
 
-        .seller {
-          font-size: 12px;
-          color: gray;
-        }
+.product-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.seller {
+  font-size: 12px;
+  color: gray;
+}
+
       `}</style>
 
       {/* NAVBAR */}
@@ -238,7 +276,7 @@ const Home = () => {
           <li onClick={() => setPage("home")}>Home</li>
           <li onClick={() => setPage("products")}>Products</li>
           <li onClick={() => setPage("jobs")}>Jobs</li>
-          <li onClick={() => setPage("login")}>Login</li>
+          <li onClick={() => setPage("dashboard")}>Login</li>
           <li onClick={() => setPage("register")}>Register</li>
         </ul>
 
@@ -250,18 +288,18 @@ const Home = () => {
       {/* HOME PAGE */}
       {page === "home" && (
         <>
-          <div className="section-box hero">
-            <h1>Search Products....</h1>
+          <div className="section-box hero search-section">
+  <h1>Search Products....</h1>
 
-            <div className="search-box">
-              <input
-                placeholder="Search products..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <button>Search</button>
-            </div>
-          </div>
+  <div className="search-box">
+    <input
+      placeholder="Search products..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+    />
+    <button>🔍︎</button>
+  </div>
+</div>
 
           <div className="section-box">
             <h1 style={{ textAlign: "center", marginBottom: "25px", color: "orange", fontSize: "42px" }}>
@@ -276,9 +314,9 @@ const Home = () => {
           </div>
 
           <div className="section-box">
-            <h2 style={{ textAlign: "center", marginBottom: "25px", color: "orange", fontSize: "42px" }}>
-              Featured Products
-            </h2>
+            <h2 className="section-title">
+  Featured Products
+</h2>
 <div className="products">
   {filteredProducts.map((p, i) => (
     <div className="product-card" key={i}>

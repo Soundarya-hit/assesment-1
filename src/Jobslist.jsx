@@ -8,7 +8,7 @@ const Jobslist = () => {
 
   const inputRef = useRef(null);
 
-  const jobs = [
+  const [jobs, setJobs] = useState([
   {
     title: "Chef",
     company: "Green Hotel",
@@ -20,44 +20,8 @@ const Jobslist = () => {
     company: "QuickBite Kitchens",
     location: "Bangalore",
     salary: "₹12,000 - ₹20,000"
-  },
-  {
-    title: "Restaurant Manager",
-    company: "Spice Garden Restaurant",
-    location: "Hyderabad",
-    salary: "₹25,000 - ₹45,000"
-  },
-  {
-    title: "Delivery Rider",
-    company: "FoodExpress",
-    location: "Chennai",
-    salary: "₹10,000 - ₹22,000 + Incentives"
-  },
-  {
-    title: "Bakery Chef",
-    company: "Sweet Crumbs Bakery",
-    location: "Coimbatore",
-    salary: "₹15,000 - ₹28,000"
-  },
-  {
-    title: "Kitchen Helper",
-    company: "Nature Basket Kitchen",
-    location: "Madurai",
-    salary: "₹8,000 - ₹15,000"
-  },
-  {
-    title: "Waiter / Waitress",
-    company: "Ocean View Cafe",
-    location: "Chennai",
-    salary: "₹10,000 - ₹18,000 + Tips"
-  },
-  {
-    title: "Food Quality Tester",
-    company: "FreshFoods Pvt Ltd",
-    location: "Bangalore",
-    salary: "₹20,000 - ₹35,000"
   }
-];
+]);
 
   useEffect(() => {
     if (search.trim() === "") setShowResults(false);
@@ -77,188 +41,192 @@ const Jobslist = () => {
   const caps = useMemo(() => Array.from({ length: 25 }), []);
   const papers = useMemo(() => Array.from({ length: 25 }), []);
   const sparkles = useMemo(() => Array.from({ length: 30 }), []);
+  const addJob = (newJob) => {
+  setJobs([...jobs, newJob]);
+};
 
   return (
     <div className={`job-page ${theme}`}>
 
-      <style>{`
-        /* ================= BASE ================= */
-        .job-page {
-          min-height: 100vh;
-          padding: 40px;
-          color: #fff;
-          position: relative;
-          overflow: hidden;
-          font-family: Arial, sans-serif;
-        }
+     <style>{`
+/* ================= BASE ================= */
+.job-page {
+  min-height: 100vh;   /* ✅ full screen */
+  height: auto;        /* ✅ expands with content */
+  padding: 40px;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;  /* ✅ prevent side scroll */
+  font-family: Arial, sans-serif;
+}
 
-        /* ================= THEMES ================= */
-        .professional {
-          background: linear-gradient(135deg, #0f172a, #1e293b);
-        }
+/* ================= THEMES ================= */
+.professional {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
 
-        .clean {
-          background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-          color: #111;
-        }
+.clean {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #111;
+}
 
-        .dark {
-          background: #020617;
-        }
+.dark {
+  background: #020617;
+}
 
-        /* ================= BACKGROUND CONTAINER ================= */
-        .bg-layer {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          overflow: hidden;
-        }
+/* ================= BACKGROUND FIX ================= */
+.bg-layer {
+  position: fixed;   /* ✅ IMPORTANT FIX */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
 
-        /* ================= 🎓 CAPS FALLING ================= */
-        .cap {
-          position: absolute;
-          top: -50px;
-          z-index: 1;
-          pointer-events: none;
-          opacity: 0.6;
-          font-size: 24px;
-          animation: fallDown linear infinite;
-        }
+/* ================= 🎓 CAPS ================= */
+.cap {
+  position: absolute;
+  top: -50px;
+  opacity: 0.6;
+  font-size: 24px;
+  animation: fallDown linear infinite;
+}
 
-        @keyframes fallDown {
-          0% {
-            transform: translateY(-10vh) rotate(0deg);
-            opacity: 0;
-          }
-          10% { opacity: 0.6; }
-          100% {
-            transform: translateY(110vh) rotate(360deg);
-            opacity: 0;
-          }
-        }
+@keyframes fallDown {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.6; }
+  100% {
+    transform: translateY(120vh) rotate(360deg); /* ✅ extended */
+    opacity: 0;
+  }
+}
 
-        /* ================= 📄 PAPERS ================= */
-        .paper {
-          position: absolute;
-          top: -60px;
-          z-index: 1;
-          pointer-events: none;
-          opacity: 0.5;
-          font-size: 20px;
-          animation: fallPaper linear infinite;
-        }
+/* ================= 📄 PAPERS ================= */
+.paper {
+  position: absolute;
+  top: -60px;
+  opacity: 0.5;
+  font-size: 20px;
+  animation: fallPaper linear infinite;
+}
 
-        @keyframes fallPaper {
-          0% {
-            transform: translateY(-10vh) rotate(0deg);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(110vh) rotate(-360deg);
-            opacity: 0;
-          }
-        }
+@keyframes fallPaper {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(120vh) rotate(-360deg); /* ✅ extended */
+    opacity: 0;
+  }
+}
 
-        /* ================= ✨ SPARKLES ================= */
-        .sparkle {
-          position: absolute;
-          width: 6px;
-          height: 6px;
-          background: gold;
-          border-radius: 50%;
-          opacity: 0.6;
-          animation: sparkleMove linear infinite;
-        }
+/* ================= ✨ SPARKLES ================= */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: sparkleMove linear infinite;
+}
 
-        @keyframes sparkleMove {
-          0% {
-            transform: translateY(-10vh) scale(0);
-            opacity: 0;
-          }
-          50% {
-            opacity: 0.8;
-          }
-          100% {
-            transform: translateY(110vh) scale(1.2);
-            opacity: 0;
-          }
-        }
+@keyframes sparkleMove {
+  0% {
+    transform: translateY(-10vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120vh) scale(1.2); /* ✅ extended */
+    opacity: 0;
+  }
+}
 
-        /* ================= UI ================= */
-        .search-container {
-          display: flex;
-          gap: 15px;
-          justify-content: center;
-          margin-top: 80px;
-          flex-wrap: wrap;
-          position: relative;
-          z-index: 2;
-        }
+/* ================= UI ================= */
+.search-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 80px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
 
-        .input-box {
-          padding: 14px 18px;
-          border-radius: 6px;
-          border: none;
-          width: 260px;
-          outline: none;
-        }
+.input-box {
+  padding: 14px 18px;
+  border-radius: 6px;
+  border: none;
+  width: 260px;
+  outline: none;
+}
 
-        .search-btn {
-          padding: 14px 20px;
-          border-radius: 6px;
-          border: none;
-          background: gray;
-          color: white;
-          cursor: not-allowed;
-        }
+.search-btn {
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: none;
+  background: gray;
+  color: white;
+  cursor: not-allowed;
+}
 
-        .search-btn.active {
-          background: linear-gradient(135deg, #38bdf8, #6366f1);
-          cursor: pointer;
-        }
+.search-btn.active {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  cursor: pointer;
+}
 
-        .jobs {
-          margin-top: 40px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-          position: relative;
-          z-index: 2;
-        }
+.jobs {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
 
-        .job-card {
-          background: rgba(255,255,255,0.1);
-          padding: 20px;
-          border-radius: 12px;
-          backdrop-filter: blur(10px);
-        }
+.job-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
 
-        .theme-switcher {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          display: flex;
-          gap: 10px;
-          z-index: 3;
-        }
+.theme-switcher {
+  position: relative; /* ✅ stays top */
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
 
-        .theme-btn {
-          padding: 8px 12px;
-          border-radius: 8px;
-          border: 1px solid rgba(255,255,255,0.3);
-          background: transparent;
-          color: inherit;
-          cursor: pointer;
-        }
+.theme-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
 
-        .empty-text {
-          text-align: center;
-          margin-top: 50px;
-          color: gray;
-          position: relative;
-          z-index: 2;
-        }
-      `}</style>
+.empty-text {
+  text-align: center;
+  margin-top: 50px;
+  color: gray;
+  position: relative;
+  z-index: 2;
+}
+`}</style>
 
       {/* 🎓 BACKGROUND LAYER */}
       <div className="bg-layer">
