@@ -184,7 +184,6 @@ Error generating stack: `+e.message+`
           z-index: 2;
         }
       `}),(0,b.jsxs)(`div`,{className:`bg-layer`,children:[f.map((e,t)=>(0,b.jsx)(`span`,{className:`cap`,style:{left:`${t*4%100}%`,animationDuration:`${4+t%4}s`,animationDelay:`${t%3}s`,fontSize:`${18+t%10}px`},children:`🎓`},`cap-${t}`)),p.map((e,t)=>(0,b.jsx)(`span`,{className:`paper`,style:{left:`${t*5%100}%`,animationDuration:`${5+t%5}s`,animationDelay:`${t%3}s`},children:`📄`},`paper-${t}`)),m.map((e,t)=>(0,b.jsx)(`span`,{className:`sparkle`,style:{left:`${t*3%100}%`,animationDuration:`${3+t%4}s`,animationDelay:`${t%2}s`}},`spark-${t}`))]}),(0,b.jsxs)(`div`,{className:`theme-switcher`,children:[(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`professional`),children:`Professional`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`clean`),children:`Clean`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`dark`),children:`Dark`})]}),(0,b.jsxs)(`div`,{className:`search-container`,children:[(0,b.jsx)(`input`,{ref:c,type:`text`,placeholder:`Search jobs...`,className:`input-box`,value:e,onChange:e=>t(e.target.value)}),(0,b.jsx)(`input`,{type:`text`,placeholder:`Location...`,className:`input-box`,value:n,onChange:e=>r(e.target.value)}),(0,b.jsx)(`button`,{className:`search-btn ${e?`active`:``}`,disabled:!e,onClick:d,children:`🔍 Search`})]}),i?(0,b.jsx)(`div`,{className:`jobs`,children:u.length>0?u.map((e,t)=>(0,b.jsxs)(`div`,{className:`job-card`,children:[(0,b.jsx)(`div`,{children:e.title}),(0,b.jsx)(`div`,{children:e.company}),(0,b.jsx)(`div`,{children:e.location}),(0,b.jsx)(`div`,{children:e.salary})]},t)):(0,b.jsx)(`p`,{className:`empty-text`,children:`No jobs found`})}):(0,b.jsx)(`p`,{className:`empty-text`,children:`Start searching for your career opportunities 🎯`})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
-
         html, body, #root {
           width: 100%;
           height: 100%;
@@ -199,7 +198,6 @@ Error generating stack: `+e.message+`
           font-family: 'Poppins', sans-serif;
         }
 
-        /* ================= STARS ================= */
         @keyframes starsMove {
           from { transform: translateY(0px); }
           to { transform: translateY(-2000px); }
@@ -215,7 +213,6 @@ Error generating stack: `+e.message+`
           opacity: 0.6;
         }
 
-        /* ================= SUN ================= */
         @keyframes sunPulse {
           0%,100% { transform: scale(1); opacity: 0.7; }
           50% { transform: scale(1.2); opacity: 1; }
@@ -229,79 +226,40 @@ Error generating stack: `+e.message+`
           height: 400px;
           background: radial-gradient(circle, #fde047, #facc15, transparent 70%);
           filter: blur(40px);
-          animation: sunPulse 6s ease-in-out infinite;
+          animation: sunPulse 6s infinite;
           z-index: 0;
         }
 
-        /* ================= DARK MODE ================= */
         .dark {
-          position: relative;
-          background: radial-gradient(circle at 20% 30%, #1e293b, #020617 80%);
-          color: #fff;
+          background: radial-gradient(circle at 20% 30%, #1e293b, #020617);
           min-height: 100vh;
-          overflow-x: hidden;
+          color: white;
+          position: relative;
         }
 
-        /* 🔥 EXTRA GLOW EFFECT (IMPORTANT) */
-        .dark::before {
-          content: "";
-          position: fixed;
-          width: 500px;
-          height: 500px;
-          background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
-          top: 20%;
-          left: 10%;
-          filter: blur(80px);
-          z-index: 0;
-        }
-
-        /* ================= LIGHT MODE ================= */
         .light {
-          position: relative;
           background: linear-gradient(to bottom, #fefce8, #e0f2fe);
-          color: #111;
           min-height: 100vh;
-          overflow-x: hidden;
-        }
-
-        .light::before {
-          content: "";
-          position: fixed;
-          width: 600px;
-          height: 600px;
-          background: radial-gradient(circle, rgba(253,224,71,0.4), transparent 70%);
-          top: -100px;
-          right: -100px;
-          filter: blur(80px);
-          z-index: 0;
-        }
-
-        /* KEEP CONTENT ABOVE */
-        .navbar, .hero, .categories, .products, .section-title {
+          color: black;
           position: relative;
-          z-index: 1;
         }
 
-        /* NAVBAR */
         .navbar {
           display: flex;
           justify-content: space-between;
           padding: 15px 40px;
           backdrop-filter: blur(12px);
-        }
-
-        .logo {
-          font-size: 22px;
-          font-weight: bold;
+          position: relative;
+          z-index: 1;
         }
 
         .nav-links {
           display: flex;
-          gap: 20px;
+          gap: 50px;
           list-style: none;
         }
 
-        .nav-links span {
+        .nav-links li {
           cursor: pointer;
         }
 
@@ -314,25 +272,35 @@ Error generating stack: `+e.message+`
           color: white;
         }
 
-        /* HERO */
+        .section-box {
+          width: 90%;
+          margin: 20px auto;
+          padding: 20px;
+          border-radius: 10px;
+          background: rgba(148, 153, 158, 0.9);
+          backdrop-filter: blur(12px);
+          position: relative;
+          z-index: 1;
+        }
+
         .hero {
           text-align: center;
-          padding: 60px 20px 30px;
         }
 
         .hero h1 {
-          font-size: 52px;
-          color:orange;
+          font-size: 40px;
+          color: orange;
+          margin-bottom: 25px;
         }
 
         .search-box {
           display: flex;
           justify-content: center;
-          margin-top: 20px;
+          gap: 10px;
         }
 
         .search-box input {
-          padding: 12px 20px;
+          padding: 12px;
           width: 280px;
           border-radius: 30px;
           border: none;
@@ -340,91 +308,83 @@ Error generating stack: `+e.message+`
         }
 
         .search-box button {
-          margin-left: 10px;
           padding: 12px 20px;
           border-radius: 30px;
           border: none;
           background: linear-gradient(135deg, #ce0ce7, #f3f709);
           color: white;
+          cursor: pointer;
         }
 
-        /* CATEGORIES */
         .categories {
           display: flex;
           justify-content: center;
           gap: 10px;
-          padding: 20px;
           flex-wrap: wrap;
         }
 
         .category {
           padding: 8px 16px;
           border-radius: 20px;
-          background: rgba(255,255,255,0.6);
+          background: rgba(255,255,255,0.3);
         }
 
-        .dark .category {
-          background: rgba(30,41,59,0.6);
-        }
-
-        /* TITLE */
-        .section-title {
-          text-align: center;
-          font-size: 22px;
-          margin-top: 10px;
-          color: orange;
-        }
-
-        /* PRODUCTS */
         .products {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
           gap: 20px;
-          padding: 30px;
         }
+       .product-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 12px 15px;
 
-        .product-card {
-          background: rgba(255,255,255,0.9);
-          border-radius: 14px;
-          text-align: center;
-          padding: 15px;
-        }
+  display: flex;
+  align-items: center;
 
-        .dark .product-card {
-          background: rgba(30,41,59,0.8);
-        }
+  justify-content: flex-start; /* important */
+  gap: 12px;
+}
 
-        .product-card:hover {
-          transform: translateY(-5px);
-        }
+.dark .product-card {
+  background: rgba(30,41,59,0.8);
+}
 
-        /* CIRCLE IMAGE */
-        .product-image {
-          width: 90px;
-          height: 90px;
-          margin: 0 auto 10px;
-          border-radius: 50%;
-          background: #86898d;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
+/* LEFT SIDE IMAGE */
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #ccc;
 
-        .product-image img {
-          width: 60px;
-          height: 60px;
-          object-fit: cover;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* IMAGE INSIDE */
+.product-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE TEXT */
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+        
         .product-name {
-          font-size: 14px;
           font-weight: 600;
+          font-size: 14px;
         }
 
         .seller {
           font-size: 12px;
           color: gray;
         }
-
-      `}),(0,b.jsxs)(`nav`,{className:`navbar`,children:[(0,b.jsx)(`div`,{className:`logo`,children:`MyLogo`}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Home`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Products`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`jobs`),children:`Jobs`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Login`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Register`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`button`,{onClick:()=>t(!e),className:`toggle-btn`,children:e?`☀️`:`🌙`})})]})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`hero`,children:[(0,b.jsx)(`h1`,{children:`Search Products....`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{type:`text`,placeholder:`Search products...`,value:i,onChange:e=>a(e.target.value)}),(0,b.jsx)(`button`,{children:`Search`})]})]}),(0,b.jsx)(`div`,{className:`categories`,children:[`Category 1`,`Category 2`,`Category 3`,`Category 4`,`Category 5`,`Category 6`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))}),(0,b.jsx)(`h2`,{className:`section-title`,children:`Featured Products`}),(0,b.jsx)(`div`,{className:`products`,children:o.map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`div`,{className:`product-image`,children:(0,b.jsx)(`img`,{src:e.image?e.image:`https://cdn-icons-png.flaticon.com/512/1829/1829586.png`,alt:`product`})}),(0,b.jsx)(`div`,{className:`product-name`,children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]},t))})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r})]})},{})}));
+      `}),(0,b.jsxs)(`div`,{className:`navbar`,children:[(0,b.jsx)(`div`,{children:`MyLogo`}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{onClick:()=>r(`home`),children:`Home`}),(0,b.jsx)(`li`,{onClick:()=>r(`products`),children:`Products`}),(0,b.jsx)(`li`,{onClick:()=>r(`jobs`),children:`Jobs`}),(0,b.jsx)(`li`,{onClick:()=>r(`login`),children:`Login`}),(0,b.jsx)(`li`,{onClick:()=>r(`register`),children:`Register`})]}),(0,b.jsx)(`button`,{className:`toggle-btn`,onClick:()=>t(!e),children:e?`☀️`:`🌙`})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`section-box hero`,children:[(0,b.jsx)(`h1`,{children:`Search Products....`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{placeholder:`Search products...`,value:i,onChange:e=>a(e.target.value)}),(0,b.jsx)(`button`,{children:`Search`})]})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h1`,{style:{textAlign:`center`,marginBottom:`25px`,color:`orange`,fontSize:`42px`},children:`Browse Categories`}),(0,b.jsx)(`div`,{className:`categories`,children:[`Category 1`,`Category 2`,`Category 3`,`Category 4`,`Category 6`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h2`,{style:{textAlign:`center`,marginBottom:`25px`,color:`orange`,fontSize:`42px`},children:`Featured Products`}),(0,b.jsx)(`div`,{className:`products`,children:o.map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`div`,{className:`product-image`,children:(0,b.jsx)(`img`,{src:e.image||`https://cdn-icons-png.flaticon.com/512/1829/1829586.png`,alt:`product`})}),(0,b.jsxs)(`div`,{className:`product-info`,children:[(0,b.jsx)(`div`,{className:`product-name`,style:{cursor:`pointer`},onClick:()=>alert(`Coming Soon: ${e.name}`),children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]})]},t))})]})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r})]})},{})}));
