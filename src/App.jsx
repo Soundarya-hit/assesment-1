@@ -11,8 +11,8 @@ const Home = () => {
     { name: "Product 2", seller: "Seller 2", image: "" },
     { name: "Product 3", seller: "Seller 3", image: "" },
     { name: "Product 4", seller: "Seller 4", image: "" },
-    { name: "Product 5", seller: "Seller 3", image: "" },
-    { name: "Product 6", seller: "Seller 4", image: "" }
+    { name: "Product 5", seller: "Seller 5", image: "" },
+    { name: "Product 6", seller: "Seller 6", image: "" }
   ];
 
   const filteredProducts = products.filter((p) =>
@@ -23,7 +23,6 @@ const Home = () => {
   return (
     
     <div className={darkMode ? "dark" : "light"}>
-      {page === "login" && <SellerDashboard />}
       {/* BACKGROUND */}
       {darkMode && <div className="stars"></div>}
       {!darkMode && <div className="sun"></div>}
@@ -344,8 +343,9 @@ html, body, #root {
         </>
       )}
 
-      {/* JOBS PAGE (IMPORTANT FIX) */}
       {page === "jobs" && <Jobslist setPage={setPage} />}
+
+{page === "login" && <SellerDashboard />}
     </div>
   );
 };
