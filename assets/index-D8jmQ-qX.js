@@ -183,7 +183,14 @@ Error generating stack: `+e.message+`
           position: relative;
           z-index: 2;
         }
-      `}),(0,b.jsxs)(`div`,{className:`bg-layer`,children:[f.map((e,t)=>(0,b.jsx)(`span`,{className:`cap`,style:{left:`${t*4%100}%`,animationDuration:`${4+t%4}s`,animationDelay:`${t%3}s`,fontSize:`${18+t%10}px`},children:`🎓`},`cap-${t}`)),p.map((e,t)=>(0,b.jsx)(`span`,{className:`paper`,style:{left:`${t*5%100}%`,animationDuration:`${5+t%5}s`,animationDelay:`${t%3}s`},children:`📄`},`paper-${t}`)),m.map((e,t)=>(0,b.jsx)(`span`,{className:`sparkle`,style:{left:`${t*3%100}%`,animationDuration:`${3+t%4}s`,animationDelay:`${t%2}s`}},`spark-${t}`))]}),(0,b.jsxs)(`div`,{className:`theme-switcher`,children:[(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`professional`),children:`Professional`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`clean`),children:`Clean`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`dark`),children:`Dark`})]}),(0,b.jsxs)(`div`,{className:`search-container`,children:[(0,b.jsx)(`input`,{ref:c,type:`text`,placeholder:`Search jobs...`,className:`input-box`,value:e,onChange:e=>t(e.target.value)}),(0,b.jsx)(`input`,{type:`text`,placeholder:`Location...`,className:`input-box`,value:n,onChange:e=>r(e.target.value)}),(0,b.jsx)(`button`,{className:`search-btn ${e?`active`:``}`,disabled:!e,onClick:d,children:`🔍 Search`})]}),i?(0,b.jsx)(`div`,{className:`jobs`,children:u.length>0?u.map((e,t)=>(0,b.jsxs)(`div`,{className:`job-card`,children:[(0,b.jsx)(`div`,{children:e.title}),(0,b.jsx)(`div`,{children:e.company}),(0,b.jsx)(`div`,{children:e.location}),(0,b.jsx)(`div`,{children:e.salary})]},t)):(0,b.jsx)(`p`,{className:`empty-text`,children:`No jobs found`})}):(0,b.jsx)(`p`,{className:`empty-text`,children:`Start searching for your career opportunities 🎯`})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`);return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[(0,b.jsx)(`style`,{children:`
+      `}),(0,b.jsxs)(`div`,{className:`bg-layer`,children:[f.map((e,t)=>(0,b.jsx)(`span`,{className:`cap`,style:{left:`${t*4%100}%`,animationDuration:`${4+t%4}s`,animationDelay:`${t%3}s`,fontSize:`${18+t%10}px`},children:`🎓`},`cap-${t}`)),p.map((e,t)=>(0,b.jsx)(`span`,{className:`paper`,style:{left:`${t*5%100}%`,animationDuration:`${5+t%5}s`,animationDelay:`${t%3}s`},children:`📄`},`paper-${t}`)),m.map((e,t)=>(0,b.jsx)(`span`,{className:`sparkle`,style:{left:`${t*3%100}%`,animationDuration:`${3+t%4}s`,animationDelay:`${t%2}s`}},`spark-${t}`))]}),(0,b.jsxs)(`div`,{className:`theme-switcher`,children:[(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`professional`),children:`Professional`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`clean`),children:`Clean`}),(0,b.jsx)(`button`,{className:`theme-btn`,onClick:()=>s(`dark`),children:`Dark`})]}),(0,b.jsxs)(`div`,{className:`search-container`,children:[(0,b.jsx)(`input`,{ref:c,type:`text`,placeholder:`Search jobs...`,className:`input-box`,value:e,onChange:e=>t(e.target.value)}),(0,b.jsx)(`input`,{type:`text`,placeholder:`Location...`,className:`input-box`,value:n,onChange:e=>r(e.target.value)}),(0,b.jsx)(`button`,{className:`search-btn ${e?`active`:``}`,disabled:!e,onClick:d,children:`🔍 Search`})]}),i?(0,b.jsx)(`div`,{className:`jobs`,children:u.length>0?u.map((e,t)=>(0,b.jsxs)(`div`,{className:`job-card`,children:[(0,b.jsx)(`div`,{children:e.title}),(0,b.jsx)(`div`,{children:e.company}),(0,b.jsx)(`div`,{children:e.location}),(0,b.jsx)(`div`,{children:e.salary})]},t)):(0,b.jsx)(`p`,{className:`empty-text`,children:`No jobs found`})}):(0,b.jsx)(`p`,{className:`empty-text`,children:`Start searching for your career opportunities 🎯`})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
+
+        html, body, #root {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
 
         * {
           margin: 0;
@@ -191,18 +198,8 @@ Error generating stack: `+e.message+`
           box-sizing: border-box;
           font-family: 'Poppins', sans-serif;
         }
-          
 
-        html, body, #root {
-  width: 100%;
-  height: 100%;
-}
-
-        body {
-          overflow-x: hidden;
-        }
-
-        /* ================= SPACE STARS ================= */
+        /* ================= STARS ================= */
         @keyframes starsMove {
           from { transform: translateY(0px); }
           to { transform: translateY(-2000px); }
@@ -212,13 +209,13 @@ Error generating stack: `+e.message+`
           position: fixed;
           width: 100%;
           height: 200%;
-          background: transparent url("https://www.transparenttextures.com/patterns/stardust.png");
+          background: url("https://www.transparenttextures.com/patterns/stardust.png");
           animation: starsMove 60s linear infinite;
           z-index: 0;
           opacity: 0.6;
         }
 
-        /* ================= SUN RAYS ================= */
+        /* ================= SUN ================= */
         @keyframes sunPulse {
           0%,100% { transform: scale(1); opacity: 0.7; }
           50% { transform: scale(1.2); opacity: 1; }
@@ -245,6 +242,7 @@ Error generating stack: `+e.message+`
           overflow-x: hidden;
         }
 
+        /* 🔥 EXTRA GLOW EFFECT (IMPORTANT) */
         .dark::before {
           content: "";
           position: fixed;
@@ -254,6 +252,7 @@ Error generating stack: `+e.message+`
           top: 20%;
           left: 10%;
           filter: blur(80px);
+          z-index: 0;
         }
 
         /* ================= LIGHT MODE ================= */
@@ -274,46 +273,37 @@ Error generating stack: `+e.message+`
           top: -100px;
           right: -100px;
           filter: blur(80px);
+          z-index: 0;
         }
 
-        /* ================= NAVBAR ================= */
+        /* KEEP CONTENT ABOVE */
+        .navbar, .hero, .categories, .products, .section-title {
+          position: relative;
+          z-index: 1;
+        }
+
+        /* NAVBAR */
         .navbar {
           display: flex;
           justify-content: space-between;
-          align-items: center;
-          padding: 15px 50px;
-          position: sticky;
-          top: 0;
-          z-index: 10;
+          padding: 15px 40px;
           backdrop-filter: blur(12px);
-          background: rgba(255,255,255,0.1);
         }
 
-        .dark .navbar {
-          background: rgba(0,0,0,0.4);
-        }
-
-        .logo img {
-          height: 40px;
+        .logo {
+          font-size: 22px;
+          font-weight: bold;
         }
 
         .nav-links {
           display: flex;
-          gap: 25px;
+          gap: 20px;
           list-style: none;
-          align-items: center;
-        }
-
-        .nav-links a {
-          text-decoration: none;
-          color: inherit;
-          font-weight: 500;
         }
 
         .nav-links span {
-  cursor: pointer;
-  font-weight: 500;
-}
+          cursor: pointer;
+        }
 
         .toggle-btn {
           background: linear-gradient(135deg, #f594ed, #eee01a);
@@ -324,34 +314,29 @@ Error generating stack: `+e.message+`
           color: white;
         }
 
-        /* ================= HERO ================= */
+        /* HERO */
         .hero {
           text-align: center;
-          padding: 80px 20px 40px;
-          position: relative;
-          z-index: 1;
+          padding: 60px 20px 30px;
         }
 
         .hero h1 {
-          font-size: 42px;
+          font-size: 52px;
           color:orange;
-        }
-
-        .hero p {
-          color: pink;
         }
 
         .search-box {
           display: flex;
           justify-content: center;
-          margin-top: 25px;
+          margin-top: 20px;
         }
 
         .search-box input {
           padding: 12px 20px;
-          width: 300px;
+          width: 280px;
           border-radius: 30px;
           border: none;
+          outline: none;
         }
 
         .search-box button {
@@ -363,90 +348,83 @@ Error generating stack: `+e.message+`
           color: white;
         }
 
-        /* ================= CATEGORIES ================= */
+        /* CATEGORIES */
         .categories {
           display: flex;
           justify-content: center;
-          gap: 15px;
-          padding: 30px;
+          gap: 10px;
+          padding: 20px;
           flex-wrap: wrap;
-          position: relative;
-          z-index: 1;
         }
 
         .category {
-          padding: 10px 20px;
+          padding: 8px 16px;
           border-radius: 20px;
           background: rgba(255,255,255,0.6);
-          backdrop-filter: blur(10px);
-          cursor: pointer;
         }
 
         .dark .category {
           background: rgba(30,41,59,0.6);
         }
 
-        /* ================= PRODUCTS ================= */
-        /* ================= PRODUCTS ================= */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.product-card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  transition: 0.3s;
-  text-align: center; /* center content */
-  padding-bottom: 15px;
-}
-
-.dark .product-card {
-  background: rgba(30,41,59,0.7);
-}
-
-.product-card:hover {
-  transform: translateY(-10px) scale(1.03);
-}
-
-/* ✅ FIXED IMAGE STYLE */
-.product-card img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;      /* prevents stretching */
-  border-radius: 50%;     /* makes circle */
-  margin: 20px auto 10px; /* center */
-  display: block;
-  border: 3px solid #fff;
-}
-
-.dark .product-card img {
-  border: 3px solid rgba(255,255,255,0.3);
-}
-
-.product-info {
-  padding: 10px;
-}
-
-.product-name {
-  font-weight: bold;
-}
-
-.seller {
-  color: gray;
-}
-
-        /* ================= FOOTER ================= */
-        .footer {
+        /* TITLE */
+        .section-title {
           text-align: center;
-          padding: 30px;
-          position: relative;
-          z-index: 1;
+          font-size: 22px;
+          margin-top: 10px;
+          color: orange;
         }
 
-      `}),e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsxs)(`nav`,{className:`navbar`,children:[(0,b.jsx)(`div`,{className:`logo`,children:(0,b.jsx)(`img`,{src:`/assesment-1/images/c.jpeg`,alt:`Logo`})}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Home`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Products`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`jobs`),children:`Jobs`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Login`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Register`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`button`,{onClick:()=>t(!e),className:`toggle-btn`,children:e?`☀️`:`🌙`})})]})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`hero`,children:[(0,b.jsx)(`h1`,{children:`Discover Fresh Food & Groceries`}),(0,b.jsx)(`p`,{children:`Farm fresh ingredients delivered to your door`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{type:`text`,placeholder:`Search food items...`}),(0,b.jsx)(`button`,{children:`Search`})]})]}),(0,b.jsx)(`div`,{className:`categories`,children:[`Vegetables`,`Fruits`,`Dairy`,`Bakery`,`Meals`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))}),(0,b.jsx)(`div`,{className:`products`,children:[{name:`Full meals`,seller:`Green hotel`,image:`/assesment-1/images/h.jpeg`},{name:`Pearl Millet Gruel`,seller:`Nature Basket`,image:`/assesment-1/images/a.jpeg`},{name:`kulipaniyaram`,seller:`A2V`,image:`/assesment-1/images/b.jpeg`},{name:`Pongal`,seller:`QuickBite Kitchens`,image:`/assesment-1/images/d.jpeg`}].map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`img`,{src:e.image,alt:e.name}),(0,b.jsxs)(`div`,{className:`product-info`,children:[(0,b.jsx)(`div`,{className:`product-name`,children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]})]},t))}),(0,b.jsx)(`div`,{className:`footer`})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r})]})},{})}));
+        /* PRODUCTS */
+        .products {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 20px;
+          padding: 30px;
+        }
+
+        .product-card {
+          background: rgba(255,255,255,0.9);
+          border-radius: 14px;
+          text-align: center;
+          padding: 15px;
+        }
+
+        .dark .product-card {
+          background: rgba(30,41,59,0.8);
+        }
+
+        .product-card:hover {
+          transform: translateY(-5px);
+        }
+
+        /* CIRCLE IMAGE */
+        .product-image {
+          width: 90px;
+          height: 90px;
+          margin: 0 auto 10px;
+          border-radius: 50%;
+          background: #86898d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        .product-image img {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+        }
+
+        .product-name {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .seller {
+          font-size: 12px;
+          color: gray;
+        }
+
+      `}),(0,b.jsxs)(`nav`,{className:`navbar`,children:[(0,b.jsx)(`div`,{className:`logo`,children:`MyLogo`}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`home`),children:`Home`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Products`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{onClick:()=>r(`jobs`),children:`Jobs`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Login`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`span`,{children:`Register`})}),(0,b.jsx)(`li`,{children:(0,b.jsx)(`button`,{onClick:()=>t(!e),className:`toggle-btn`,children:e?`☀️`:`🌙`})})]})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`hero`,children:[(0,b.jsx)(`h1`,{children:`Search Products....`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{type:`text`,placeholder:`Search products...`,value:i,onChange:e=>a(e.target.value)}),(0,b.jsx)(`button`,{children:`Search`})]})]}),(0,b.jsx)(`div`,{className:`categories`,children:[`Category 1`,`Category 2`,`Category 3`,`Category 4`,`Category 5`,`Category 6`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))}),(0,b.jsx)(`h2`,{className:`section-title`,children:`Featured Products`}),(0,b.jsx)(`div`,{className:`products`,children:o.map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`div`,{className:`product-image`,children:(0,b.jsx)(`img`,{src:e.image?e.image:`https://cdn-icons-png.flaticon.com/512/1829/1829586.png`,alt:`product`})}),(0,b.jsx)(`div`,{className:`product-name`,children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]},t))})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r})]})},{})}));
