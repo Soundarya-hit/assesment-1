@@ -7,8 +7,8 @@ const Home = () => {
   // 🍔 FOOD PRODUCTS
   const products = [
   {
-    name: "Full meals",
-    seller: "Green hotel",
+    name: "Product Name",
+    seller: "Seller name",
     image: `${import.meta.env.BASE_URL}images/h.jpeg`
   },
   {
