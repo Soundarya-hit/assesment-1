@@ -9,11 +9,55 @@ const Jobslist = () => {
   const inputRef = useRef(null);
 
   const jobs = [
-    { title: "Frontend Developer", company: "Tech Corp", location: "Chennai" },
-    { title: "Backend Developer", company: "Code Labs", location: "Bangalore" },
-    { title: "UI Designer", company: "Design Studio", location: "Hyderabad" },
-    { title: "React Developer", company: "Startup Hub", location: "Chennai" },
-  ];
+  {
+    title: "Chef",
+    company: "Green Hotel",
+    location: "Chennai",
+    salary: "₹18,000 - ₹30,000"
+  },
+  {
+    title: "Assistant Cook",
+    company: "QuickBite Kitchens",
+    location: "Bangalore",
+    salary: "₹12,000 - ₹20,000"
+  },
+  {
+    title: "Restaurant Manager",
+    company: "Spice Garden Restaurant",
+    location: "Hyderabad",
+    salary: "₹25,000 - ₹45,000"
+  },
+  {
+    title: "Delivery Rider",
+    company: "FoodExpress",
+    location: "Chennai",
+    salary: "₹10,000 - ₹22,000 + Incentives"
+  },
+  {
+    title: "Bakery Chef",
+    company: "Sweet Crumbs Bakery",
+    location: "Coimbatore",
+    salary: "₹15,000 - ₹28,000"
+  },
+  {
+    title: "Kitchen Helper",
+    company: "Nature Basket Kitchen",
+    location: "Madurai",
+    salary: "₹8,000 - ₹15,000"
+  },
+  {
+    title: "Waiter / Waitress",
+    company: "Ocean View Cafe",
+    location: "Chennai",
+    salary: "₹10,000 - ₹18,000 + Tips"
+  },
+  {
+    title: "Food Quality Tester",
+    company: "FreshFoods Pvt Ltd",
+    location: "Bangalore",
+    salary: "₹20,000 - ₹35,000"
+  }
+];
 
   useEffect(() => {
     if (search.trim() === "") setShowResults(false);
@@ -310,6 +354,7 @@ const Jobslist = () => {
                 <div>{job.title}</div>
                 <div>{job.company}</div>
                 <div>{job.location}</div>
+                <div>{job.salary}</div>
               </div>
             ))
           ) : (
