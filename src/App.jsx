@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import Jobslist from "./Jobslist";
+
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [page, setPage] = useState("home");
+  const [search, setSearch] = useState("");
 
-  // 🍔 FOOD PRODUCTS
   const products = [
-  {
-    name: "Full meals",
-    seller: "Green hotel",
-    image: `${import.meta.env.BASE_URL}images/h.jpeg`
-  },
-  {
-    name: "Pearl Millet Gruel",
-    seller: "Nature Basket",
-    image: `${import.meta.env.BASE_URL}images/a.jpeg`
-  },
-  {
-    name: "kulipaniyaram",
-    seller: "A2V",
-    image: `${import.meta.env.BASE_URL}images/b.jpeg`
-  },
-  {
-    name: "Pongal",
-    seller: "QuickBite Kitchens",
-    image: `${import.meta.env.BASE_URL}images/d.jpeg`
-  }
-];
+    { name: "Product 1", seller: "Seller 1", image: "" },
+    { name: "Product 2", seller: "Seller 2", image: "" },
+    { name: "Product 3", seller: "Seller 3", image: "" },
+    { name: "Product 4", seller: "Seller 4", image: "" }
+  ];
+
+  const filteredProducts = products.filter((p) =>
+    p.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className={darkMode ? "dark" : "light"}>
+
+      {/* ✅ BACKGROUND ANIMATION */}
+      {darkMode && <div className="stars"></div>}
+      {!darkMode && <div className="sun"></div>}
+
       <style>{`
+
+        html, body, #root {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
 
         * {
           margin: 0;
@@ -38,18 +39,8 @@ const Home = () => {
           box-sizing: border-box;
           font-family: 'Poppins', sans-serif;
         }
-          
 
-        html, body, #root {
-  width: 100%;
-  height: 100%;
-}
-
-        body {
-          overflow-x: hidden;
-        }
-
-        /* ================= SPACE STARS ================= */
+        /* ================= STARS ================= */
         @keyframes starsMove {
           from { transform: translateY(0px); }
           to { transform: translateY(-2000px); }
@@ -59,13 +50,13 @@ const Home = () => {
           position: fixed;
           width: 100%;
           height: 200%;
-          background: transparent url("https://www.transparenttextures.com/patterns/stardust.png");
+          background: url("https://www.transparenttextures.com/patterns/stardust.png");
           animation: starsMove 60s linear infinite;
           z-index: 0;
           opacity: 0.6;
         }
 
-        /* ================= SUN RAYS ================= */
+        /* ================= SUN ================= */
         @keyframes sunPulse {
           0%,100% { transform: scale(1); opacity: 0.7; }
           50% { transform: scale(1.2); opacity: 1; }
@@ -92,6 +83,7 @@ const Home = () => {
           overflow-x: hidden;
         }
 
+        /* 🔥 EXTRA GLOW EFFECT (IMPORTANT) */
         .dark::before {
           content: "";
           position: fixed;
@@ -101,6 +93,7 @@ const Home = () => {
           top: 20%;
           left: 10%;
           filter: blur(80px);
+          z-index: 0;
         }
 
         /* ================= LIGHT MODE ================= */
@@ -121,46 +114,37 @@ const Home = () => {
           top: -100px;
           right: -100px;
           filter: blur(80px);
+          z-index: 0;
         }
 
-        /* ================= NAVBAR ================= */
+        /* KEEP CONTENT ABOVE */
+        .navbar, .hero, .categories, .products, .section-title {
+          position: relative;
+          z-index: 1;
+        }
+
+        /* NAVBAR */
         .navbar {
           display: flex;
           justify-content: space-between;
-          align-items: center;
-          padding: 15px 50px;
-          position: sticky;
-          top: 0;
-          z-index: 10;
+          padding: 15px 40px;
           backdrop-filter: blur(12px);
-          background: rgba(255,255,255,0.1);
         }
 
-        .dark .navbar {
-          background: rgba(0,0,0,0.4);
-        }
-
-        .logo img {
-          height: 40px;
+        .logo {
+          font-size: 22px;
+          font-weight: bold;
         }
 
         .nav-links {
           display: flex;
-          gap: 25px;
+          gap: 20px;
           list-style: none;
-          align-items: center;
-        }
-
-        .nav-links a {
-          text-decoration: none;
-          color: inherit;
-          font-weight: 500;
         }
 
         .nav-links span {
-  cursor: pointer;
-  font-weight: 500;
-}
+          cursor: pointer;
+        }
 
         .toggle-btn {
           background: linear-gradient(135deg, #f594ed, #eee01a);
@@ -171,34 +155,29 @@ const Home = () => {
           color: white;
         }
 
-        /* ================= HERO ================= */
+        /* HERO */
         .hero {
           text-align: center;
-          padding: 80px 20px 40px;
-          position: relative;
-          z-index: 1;
+          padding: 60px 20px 30px;
         }
 
         .hero h1 {
-          font-size: 42px;
+          font-size: 52px;
           color:orange;
-        }
-
-        .hero p {
-          color: pink;
         }
 
         .search-box {
           display: flex;
           justify-content: center;
-          margin-top: 25px;
+          margin-top: 20px;
         }
 
         .search-box input {
           padding: 12px 20px;
-          width: 300px;
+          width: 280px;
           border-radius: 30px;
           border: none;
+          outline: none;
         }
 
         .search-box button {
@@ -210,157 +189,157 @@ const Home = () => {
           color: white;
         }
 
-        /* ================= CATEGORIES ================= */
+        /* CATEGORIES */
         .categories {
           display: flex;
           justify-content: center;
-          gap: 15px;
-          padding: 30px;
+          gap: 10px;
+          padding: 20px;
           flex-wrap: wrap;
-          position: relative;
-          z-index: 1;
         }
 
         .category {
-          padding: 10px 20px;
+          padding: 8px 16px;
           border-radius: 20px;
           background: rgba(255,255,255,0.6);
-          backdrop-filter: blur(10px);
-          cursor: pointer;
         }
 
         .dark .category {
           background: rgba(30,41,59,0.6);
         }
 
-        /* ================= PRODUCTS ================= */
-        /* ================= PRODUCTS ================= */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.product-card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  transition: 0.3s;
-  text-align: center; /* center content */
-  padding-bottom: 15px;
-}
-
-.dark .product-card {
-  background: rgba(30,41,59,0.7);
-}
-
-.product-card:hover {
-  transform: translateY(-10px) scale(1.03);
-}
-
-/* ✅ FIXED IMAGE STYLE */
-.product-card img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;      /* prevents stretching */
-  border-radius: 50%;     /* makes circle */
-  margin: 20px auto 10px; /* center */
-  display: block;
-  border: 3px solid #fff;
-}
-
-.dark .product-card img {
-  border: 3px solid rgba(255,255,255,0.3);
-}
-
-.product-info {
-  padding: 10px;
-}
-
-.product-name {
-  font-weight: bold;
-}
-
-.seller {
-  color: gray;
-}
-
-        /* ================= FOOTER ================= */
-        .footer {
+        /* TITLE */
+        .section-title {
           text-align: center;
+          font-size: 22px;
+          margin-top: 10px;
+          color: orange;
+        }
+
+        /* PRODUCTS */
+        .products {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 20px;
           padding: 30px;
-          position: relative;
-          z-index: 1;
+        }
+
+        .product-card {
+          background: rgba(255,255,255,0.9);
+          border-radius: 14px;
+          text-align: center;
+          padding: 15px;
+        }
+
+        .dark .product-card {
+          background: rgba(30,41,59,0.8);
+        }
+
+        .product-card:hover {
+          transform: translateY(-5px);
+        }
+
+        /* CIRCLE IMAGE */
+        .product-image {
+          width: 90px;
+          height: 90px;
+          margin: 0 auto 10px;
+          border-radius: 50%;
+          background: #86898d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        .product-image img {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+        }
+
+        .product-name {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .seller {
+          font-size: 12px;
+          color: gray;
         }
 
       `}</style>
- {/* Background Effects */}
-    {darkMode && <div className="stars"></div>}
-    {!darkMode && <div className="sun"></div>}
 
-    {/* ================= NAVBAR ================= */}
-    <nav className="navbar">
-      <div className="logo">
-        <img src={`${import.meta.env.BASE_URL}images/c.jpeg`} alt="Logo" />
-      </div>
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <div className="logo">MyLogo</div>
 
-      <ul className="nav-links">
-        <li><span onClick={() => setPage("home")}>Home</span></li>
-        <li><span onClick={() => setPage("home")}>Products</span></li>
-        <li><span onClick={() => setPage("jobs")}>Jobs</span></li>
-        <li><span onClick={() => setPage("home")}>Login</span></li>
-        <li><span onClick={() => setPage("home")}>Register</span></li>
+        <ul className="nav-links">
+          <li><span onClick={() => setPage("home")}>Home</span></li>
+          <li><span>Products</span></li>
+          <li><span onClick={() => setPage("jobs")}>Jobs</span></li>
+          <li><span>Login</span></li>
+          <li><span>Register</span></li>
 
-        <li>
-          <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
-            {darkMode ? "☀️" : "🌙"}
-          </button>
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
+              {darkMode ? "☀️" : "🌙"}
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-    {/* ================= HOME PAGE ================= */}
-    {page === "home" && (
-      <>
-        <div className="hero">
-          <h1>Discover Fresh Food & Groceries</h1>
-          <p>Farm fresh ingredients delivered to your door</p>
+      {/* HOME */}
+      {page === "home" && (
+        <>
+          <div className="hero">
+            <h1>Search Products....</h1>
 
-          <div className="search-box">
-            <input type="text" placeholder="Search food items..." />
-            <button>Search</button>
+            <div className="search-box">
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <button>Search</button>
+            </div>
           </div>
-        </div>
 
-        <div className="categories">
-          {["Vegetables", "Fruits", "Dairy", "Bakery", "Meals"].map((cat, i) => (
-            <div key={i} className="category">{cat}</div>
-          ))}
-        </div>
+          <div className="categories">
+            {["Category 1","Category 2","Category 3","Category 4","Category 5","Category 6"]
+              .map((cat, i) => (
+                <div key={i} className="category">{cat}</div>
+              ))}
+          </div>
 
-        <div className="products">
-          {products.map((p, index) => (
-            <div className="product-card" key={index}>
-              <img src={p.image} alt={p.name} />
-              <div className="product-info">
+          <h2 className="section-title">Featured Products</h2>
+
+          <div className="products">
+            {filteredProducts.map((p, index) => (
+              <div className="product-card" key={index}>
+                <div className="product-image">
+                  <img
+                    src={
+                      p.image
+                        ? p.image
+                        : "https://cdn-icons-png.flaticon.com/512/1829/1829586.png"
+                    }
+                    alt="product"
+                  />
+                </div>
+
                 <div className="product-name">{p.name}</div>
                 <div className="seller">{p.seller}</div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </>
+      )}
 
-        <div className="footer"></div>
-      </>
-    )}
-
-    {/* ================= JOBS PAGE ================= */}
-    {page === "jobs" && <Jobslist setPage={setPage} />}
-
-  </div>
-);
+      {page === "jobs" && <Jobslist setPage={setPage} />}
+    </div>
+  );
 };
+
 export default Home;
