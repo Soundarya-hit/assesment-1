@@ -21,17 +21,12 @@ const Home = () => {
   );
 
   return (
+    
     <div className={darkMode ? "dark" : "light"}>
-
+      {page === "login" && <SellerDashboard />}
       {/* BACKGROUND */}
       {darkMode && <div className="stars"></div>}
       {!darkMode && <div className="sun"></div>}
-      {page === "home" && <Home setPage={setPage} />}
-
-    {page === "jobs" && <Jobslist setPage={setPage} />}
-
-    {page === "dashboard" && <SellerDashboard />}
-
       <style>{`
         
 html, body, #root {
@@ -276,7 +271,7 @@ html, body, #root {
           <li onClick={() => setPage("home")}>Home</li>
           <li onClick={() => setPage("products")}>Products</li>
           <li onClick={() => setPage("jobs")}>Jobs</li>
-          <li onClick={() => setPage("dashboard")}>Login</li>
+          <li onClick={() => setPage("login")}>Login</li>
           <li onClick={() => setPage("register")}>Register</li>
         </ul>
 
