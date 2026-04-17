@@ -30,7 +30,6 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : "light"}>
-     {page === "jobs" && <Jobslist />}
       <style>{`
 
         * {
@@ -298,68 +297,70 @@ const Home = () => {
         }
 
       `}</style>
+ {/* Background Effects */}
+    {darkMode && <div className="stars"></div>}
+    {!darkMode && <div className="sun"></div>}
 
-      {/* Background Effects */}
-      {darkMode && <div className="stars"></div>}
-      {!darkMode && <div className="sun"></div>}
+    {/* ================= NAVBAR ================= */}
+    <nav className="navbar">
+      <div className="logo">
+        <img src={`${import.meta.env.BASE_URL}images/c.jpeg`} alt="Logo" />
+      </div>
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="logo">
-          <img src={`${import.meta.env.BASE_URL}images/c.jpeg`} alt="Logo" />
-        </div>
+      <ul className="nav-links">
+        <li><span onClick={() => setPage("home")}>Home</span></li>
+        <li><span onClick={() => setPage("home")}>Products</span></li>
+        <li><span onClick={() => setPage("jobs")}>Jobs</span></li>
+        <li><span onClick={() => setPage("home")}>Login</span></li>
+        <li><span onClick={() => setPage("home")}>Register</span></li>
 
-        <ul className="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
         <li>
-  <span onClick={() => setPage("jobs")}>Jobs</span>
-</li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
-          <li>
-            <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
-              {darkMode ? "☀️" : "🌙"}
-            </button>
-          </li>
-        </ul>
-      </nav>
+          <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        </li>
+      </ul>
+    </nav>
 
-      {/* HERO */}
-      <div className="hero">
-        <h1>Discover Fresh Food & Groceries</h1>
-        <p>Farm fresh ingredients delivered to your door</p>
+    {/* ================= HOME PAGE ================= */}
+    {page === "home" && (
+      <>
+        <div className="hero">
+          <h1>Discover Fresh Food & Groceries</h1>
+          <p>Farm fresh ingredients delivered to your door</p>
 
-        <div className="search-box">
-          <input type="text" placeholder="Search food items..." />
-          <button>Search</button>
-        </div>
-      </div>
-
-      {/* CATEGORIES */}
-      <div className="categories">
-        {["Vegetables", "Fruits", "Dairy", "Bakery", "Meals"].map((cat, i) => (
-          <div key={i} className="category">{cat}</div>
-        ))}
-      </div>
-
-      {/* PRODUCTS */}
-      <div className="products">
-        {products.map((p, index) => (
-          <div className="product-card" key={index}>
-            <img src={p.image} alt={p.name} />
-            <div className="product-info">
-              <div className="product-name">{p.name}</div>
-              <div className="seller">{p.seller}</div>
-            </div>
+          <div className="search-box">
+            <input type="text" placeholder="Search food items..." />
+            <button>Search</button>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* FOOTER */}
-      <div className="footer"></div>
-    </div>
-  );
+        <div className="categories">
+          {["Vegetables", "Fruits", "Dairy", "Bakery", "Meals"].map((cat, i) => (
+            <div key={i} className="category">{cat}</div>
+          ))}
+        </div>
+
+        <div className="products">
+          {products.map((p, index) => (
+            <div className="product-card" key={index}>
+              <img src={p.image} alt={p.name} />
+              <div className="product-info">
+                <div className="product-name">{p.name}</div>
+                <div className="seller">{p.seller}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="footer"></div>
+      </>
+    )}
+
+    {/* ================= JOBS PAGE ================= */}
+    {page === "jobs" && <Jobslist setPage={setPage} />}
+
+  </div>
+);
 };
-
 export default Home;
