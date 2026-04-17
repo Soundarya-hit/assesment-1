@@ -20,12 +20,11 @@ const Home = () => {
   return (
     <div className={darkMode ? "dark" : "light"}>
 
-      {/* ✅ BACKGROUND ANIMATION */}
+      {/* BACKGROUND */}
       {darkMode && <div className="stars"></div>}
       {!darkMode && <div className="sun"></div>}
 
       <style>{`
-
         html, body, #root {
           width: 100%;
           height: 100%;
@@ -40,7 +39,6 @@ const Home = () => {
           font-family: 'Poppins', sans-serif;
         }
 
-        /* ================= STARS ================= */
         @keyframes starsMove {
           from { transform: translateY(0px); }
           to { transform: translateY(-2000px); }
@@ -56,7 +54,6 @@ const Home = () => {
           opacity: 0.6;
         }
 
-        /* ================= SUN ================= */
         @keyframes sunPulse {
           0%,100% { transform: scale(1); opacity: 0.7; }
           50% { transform: scale(1.2); opacity: 1; }
@@ -70,79 +67,40 @@ const Home = () => {
           height: 400px;
           background: radial-gradient(circle, #fde047, #facc15, transparent 70%);
           filter: blur(40px);
-          animation: sunPulse 6s ease-in-out infinite;
+          animation: sunPulse 6s infinite;
           z-index: 0;
         }
 
-        /* ================= DARK MODE ================= */
         .dark {
-          position: relative;
-          background: radial-gradient(circle at 20% 30%, #1e293b, #020617 80%);
-          color: #fff;
+          background: radial-gradient(circle at 20% 30%, #1e293b, #020617);
           min-height: 100vh;
-          overflow-x: hidden;
+          color: white;
+          position: relative;
         }
 
-        /* 🔥 EXTRA GLOW EFFECT (IMPORTANT) */
-        .dark::before {
-          content: "";
-          position: fixed;
-          width: 500px;
-          height: 500px;
-          background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
-          top: 20%;
-          left: 10%;
-          filter: blur(80px);
-          z-index: 0;
-        }
-
-        /* ================= LIGHT MODE ================= */
         .light {
-          position: relative;
           background: linear-gradient(to bottom, #fefce8, #e0f2fe);
-          color: #111;
           min-height: 100vh;
-          overflow-x: hidden;
-        }
-
-        .light::before {
-          content: "";
-          position: fixed;
-          width: 600px;
-          height: 600px;
-          background: radial-gradient(circle, rgba(253,224,71,0.4), transparent 70%);
-          top: -100px;
-          right: -100px;
-          filter: blur(80px);
-          z-index: 0;
-        }
-
-        /* KEEP CONTENT ABOVE */
-        .navbar, .hero, .categories, .products, .section-title {
+          color: black;
           position: relative;
-          z-index: 1;
         }
 
-        /* NAVBAR */
         .navbar {
           display: flex;
           justify-content: space-between;
           padding: 15px 40px;
           backdrop-filter: blur(12px);
-        }
-
-        .logo {
-          font-size: 22px;
-          font-weight: bold;
+          position: relative;
+          z-index: 1;
         }
 
         .nav-links {
           display: flex;
-          gap: 20px;
+          gap: 50px;
           list-style: none;
         }
 
-        .nav-links span {
+        .nav-links li {
           cursor: pointer;
         }
 
@@ -155,25 +113,35 @@ const Home = () => {
           color: white;
         }
 
-        /* HERO */
+        .section-box {
+          width: 90%;
+          margin: 20px auto;
+          padding: 20px;
+          border-radius: 10px;
+          background: rgba(148, 153, 158, 0.9);
+          backdrop-filter: blur(12px);
+          position: relative;
+          z-index: 1;
+        }
+
         .hero {
           text-align: center;
-          padding: 60px 20px 30px;
         }
 
         .hero h1 {
-          font-size: 52px;
-          color:orange;
+          font-size: 40px;
+          color: orange;
+          margin-bottom: 25px;
         }
 
         .search-box {
           display: flex;
           justify-content: center;
-          margin-top: 20px;
+          gap: 10px;
         }
 
         .search-box input {
-          padding: 12px 20px;
+          padding: 12px;
           width: 280px;
           border-radius: 30px;
           border: none;
@@ -181,123 +149,112 @@ const Home = () => {
         }
 
         .search-box button {
-          margin-left: 10px;
           padding: 12px 20px;
           border-radius: 30px;
           border: none;
           background: linear-gradient(135deg, #ce0ce7, #f3f709);
           color: white;
+          cursor: pointer;
         }
 
-        /* CATEGORIES */
         .categories {
           display: flex;
           justify-content: center;
           gap: 10px;
-          padding: 20px;
           flex-wrap: wrap;
         }
 
         .category {
           padding: 8px 16px;
           border-radius: 20px;
-          background: rgba(255,255,255,0.6);
+          background: rgba(255,255,255,0.3);
         }
 
-        .dark .category {
-          background: rgba(30,41,59,0.6);
-        }
-
-        /* TITLE */
-        .section-title {
-          text-align: center;
-          font-size: 22px;
-          margin-top: 10px;
-          color: orange;
-        }
-
-        /* PRODUCTS */
         .products {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
           gap: 20px;
-          padding: 30px;
         }
+       .product-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 14px;
+  padding: 12px 15px;
 
-        .product-card {
-          background: rgba(255,255,255,0.9);
-          border-radius: 14px;
-          text-align: center;
-          padding: 15px;
-        }
+  display: flex;
+  align-items: center;
 
-        .dark .product-card {
-          background: rgba(30,41,59,0.8);
-        }
+  justify-content: flex-start; /* important */
+  gap: 12px;
+}
 
-        .product-card:hover {
-          transform: translateY(-5px);
-        }
+.dark .product-card {
+  background: rgba(30,41,59,0.8);
+}
 
-        /* CIRCLE IMAGE */
-        .product-image {
-          width: 90px;
-          height: 90px;
-          margin: 0 auto 10px;
-          border-radius: 50%;
-          background: #86898d;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
+/* LEFT SIDE IMAGE */
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #ccc;
 
-        .product-image img {
-          width: 60px;
-          height: 60px;
-          object-fit: cover;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* IMAGE INSIDE */
+.product-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+/* RIGHT SIDE TEXT */
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+        
         .product-name {
-          font-size: 14px;
           font-weight: 600;
+          font-size: 14px;
         }
 
         .seller {
           font-size: 12px;
           color: gray;
         }
-
       `}</style>
 
       {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="logo">MyLogo</div>
+      <div className="navbar">
+        <div>MyLogo</div>
 
         <ul className="nav-links">
-          <li><span onClick={() => setPage("home")}>Home</span></li>
-          <li><span>Products</span></li>
-          <li><span onClick={() => setPage("jobs")}>Jobs</span></li>
-          <li><span>Login</span></li>
-          <li><span>Register</span></li>
-
-          <li>
-            <button onClick={() => setDarkMode(!darkMode)} className="toggle-btn">
-              {darkMode ? "☀️" : "🌙"}
-            </button>
-          </li>
+          <li onClick={() => setPage("home")}>Home</li>
+          <li onClick={() => setPage("products")}>Products</li>
+          <li onClick={() => setPage("jobs")}>Jobs</li>
+          <li onClick={() => setPage("login")}>Login</li>
+          <li onClick={() => setPage("register")}>Register</li>
         </ul>
-      </nav>
 
-      {/* HOME */}
+        <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
+      </div>
+
+      {/* HOME PAGE */}
       {page === "home" && (
         <>
-          <div className="hero">
+          <div className="section-box hero">
             <h1>Search Products....</h1>
 
             <div className="search-box">
               <input
-                type="text"
                 placeholder="Search products..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -306,37 +263,55 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="categories">
-            {["Category 1","Category 2","Category 3","Category 4","Category 5","Category 6"]
-              .map((cat, i) => (
-                <div key={i} className="category">{cat}</div>
+          <div className="section-box">
+            <h1 style={{ textAlign: "center", marginBottom: "25px", color: "orange", fontSize: "42px" }}>
+              Browse Categories
+            </h1>
+
+            <div className="categories">
+              {["Category 1","Category 2","Category 3","Category 4","Category 6"].map((c, i) => (
+                <div key={i} className="category">{c}</div>
               ))}
+            </div>
           </div>
 
-          <h2 className="section-title">Featured Products</h2>
+          <div className="section-box">
+            <h2 style={{ textAlign: "center", marginBottom: "25px", color: "orange", fontSize: "42px" }}>
+              Featured Products
+            </h2>
+<div className="products">
+  {filteredProducts.map((p, i) => (
+    <div className="product-card" key={i}>
 
-          <div className="products">
-            {filteredProducts.map((p, index) => (
-              <div className="product-card" key={index}>
-                <div className="product-image">
-                  <img
-                    src={
-                      p.image
-                        ? p.image
-                        : "https://cdn-icons-png.flaticon.com/512/1829/1829586.png"
-                    }
-                    alt="product"
-                  />
-                </div>
+      {/* LEFT SIDE - IMAGE */}
+      <div className="product-image">
+        <img
+          src={p.image || "https://cdn-icons-png.flaticon.com/512/1829/1829586.png"}
+          alt="product"
+        />
+      </div>
 
-                <div className="product-name">{p.name}</div>
-                <div className="seller">{p.seller}</div>
-              </div>
-            ))}
+      {/* RIGHT SIDE - INFO */}
+      <div className="product-info">
+        <div
+          className="product-name"
+          style={{ cursor: "pointer" }}
+          onClick={() => alert(`Coming Soon: ${p.name}`)}
+        >
+          {p.name}
+        </div>
+        <div className="seller">{p.seller}</div>
+      </div>
+
+    </div>
+  ))}
+</div>
+            
           </div>
         </>
       )}
 
+      {/* JOBS PAGE (IMPORTANT FIX) */}
       {page === "jobs" && <Jobslist setPage={setPage} />}
     </div>
   );
