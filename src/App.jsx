@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-
+import Jobslist from "./Jobslist";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const [page, setPage] = useState("home");
 
   // 🍔 FOOD PRODUCTS
   const products = [
@@ -29,6 +30,7 @@ const Home = () => {
 
   return (
     <div className={darkMode ? "dark" : "light"}>
+     {page === "jobs" && <Jobslist />}
       <style>{`
 
         * {
@@ -155,6 +157,11 @@ const Home = () => {
           color: inherit;
           font-weight: 500;
         }
+
+        .nav-links span {
+  cursor: pointer;
+  font-weight: 500;
+}
 
         .toggle-btn {
           background: linear-gradient(135deg, #f594ed, #eee01a);
@@ -305,7 +312,9 @@ const Home = () => {
         <ul className="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
-          <li><a href="#">Jobs</a></li>
+        <li>
+  <span onClick={() => setPage("jobs")}>Jobs</span>
+</li>
           <li><a href="#">Login</a></li>
           <li><a href="#">Register</a></li>
           <li>
