@@ -216,7 +216,7 @@ Error generating stack: `+e.message+`
 
         .topbar h2 {
           font-size: 38px;
-          color: #66e8ec;
+          color: orange;
         }
 
         .search-group {
@@ -319,7 +319,7 @@ Error generating stack: `+e.message+`
         .welcome {
           font-size: 38px;
           margin-bottom: 10px;
-          color: #66e8ec;
+          color: orange;
           text-align: left;
           
         }
@@ -373,7 +373,123 @@ Error generating stack: `+e.message+`
         .btn:hover {
           background: rgba(255,255,255,0.35);
         }
-      `}),(0,b.jsxs)(`div`,{className:`app`,children:[(0,b.jsxs)(`div`,{className:`topbar`,children:[(0,b.jsx)(`h2`,{children:`Seller Dashboard`}),(0,b.jsxs)(`div`,{className:`search-group`,children:[(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 1`,value:n.s1,onChange:e=>r({...n,s1:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 2`,value:n.s2,onChange:e=>r({...n,s2:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 3`,value:n.s3,onChange:e=>r({...n,s3:e.target.value})})]})]})]}),(0,b.jsxs)(`div`,{className:`underbar`,children:[(0,b.jsx)(`ul`,{className:`sidebar`,children:Object.keys(a).map(n=>(0,b.jsxs)(`li`,{className:e===n?`active`:``,onClick:()=>t(n),children:[(0,b.jsx)(`span`,{className:`icon`,children:a[n]}),(0,b.jsx)(`span`,{children:n})]},n))}),(0,b.jsxs)(`div`,{className:`main`,children:[(0,b.jsx)(`div`,{className:`welcome`,children:`Welcome, Seller!`}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Total Products`),children:[(0,b.jsxs)(`div`,{children:[`Total Products `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`💲`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`📦`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Profile Views`),children:[(0,b.jsxs)(`div`,{children:[`Profile Views `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`4`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`👤`})]})]}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Add Product`),children:[(0,b.jsx)(`div`,{children:`Add Product`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`➕`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Post Job`),children:[(0,b.jsx)(`div`,{children:`Post Job`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`💼`})]})]}),(0,b.jsxs)(`div`,{className:`buttons`,children:[(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Add Product Button`),children:`Add Product`}),(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Post Job Button`),children:`Post Job`})]})]})]})]})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``},{name:`Product 5`,seller:`Seller 5`,image:``},{name:`Product 6`,seller:`Seller 6`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
+      `}),(0,b.jsxs)(`div`,{className:`app`,children:[(0,b.jsxs)(`div`,{className:`topbar`,children:[(0,b.jsx)(`h2`,{children:`Seller Dashboard`}),(0,b.jsxs)(`div`,{className:`search-group`,children:[(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 1`,value:n.s1,onChange:e=>r({...n,s1:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 2`,value:n.s2,onChange:e=>r({...n,s2:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 3`,value:n.s3,onChange:e=>r({...n,s3:e.target.value})})]})]})]}),(0,b.jsxs)(`div`,{className:`underbar`,children:[(0,b.jsx)(`ul`,{className:`sidebar`,children:Object.keys(a).map(n=>(0,b.jsxs)(`li`,{className:e===n?`active`:``,onClick:()=>t(n),children:[(0,b.jsx)(`span`,{className:`icon`,children:a[n]}),(0,b.jsx)(`span`,{children:n})]},n))}),(0,b.jsxs)(`div`,{className:`main`,children:[(0,b.jsx)(`div`,{className:`welcome`,children:`Welcome, Seller!`}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Total Products`),children:[(0,b.jsxs)(`div`,{children:[`Total Products `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`💲`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`📦`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Profile Views`),children:[(0,b.jsxs)(`div`,{children:[`Profile Views `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`4`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`👤`})]})]}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Add Product`),children:[(0,b.jsx)(`div`,{children:`Add Product`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`➕`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Post Job`),children:[(0,b.jsx)(`div`,{children:`Post Job`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`💼`})]})]}),(0,b.jsxs)(`div`,{className:`buttons`,children:[(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Add Product Button`),children:`Add Product`}),(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Post Job Button`),children:`Post Job`})]})]})]})]})]})},D=()=>{let[e,t]=(0,_.useState)(``),[n,r]=(0,_.useState)(``),[i,a]=(0,_.useState)(null),[o]=(0,_.useState)([{id:1,name:`Product name`,seller:`Seller name`,category:`category`,location:`location`,price:`₹`},{id:2,name:`Product name`,seller:`Seller name`,category:`category`,location:`location`,price:`₹`},{id:4,name:`Product name`,seller:`Seller name`,category:`category`,location:`location`,price:`₹`}]),s=[...new Set(o.map(e=>e.category))],c=[...new Set(o.map(e=>e.location))],l=o.filter(t=>(e===``||t.category===e)&&(n===``||t.location===n));return(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)(`style`,{children:`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+        }
+
+        body {
+          background: #0f172a;
+        }
+
+        .topbar {
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.1);
+          color: orange;
+          padding: 40px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 50px;
+          font-weight: bold;
+        }
+
+        .container {
+          display: flex;
+          gap: 10px;
+          padding: 15px;
+          height: calc(100vh - 60px);
+        }
+
+        .left {
+          width: 25%;
+          background: rgba(255,255,255,0.08);
+          padding: 15px;
+          color: white;
+          border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .left h2 {
+          text-align: left;
+          color: orange;
+          margin-bottom: 15px;
+          font-size: 42px;
+        }
+
+        .left select {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          border-radius: 6px;
+        }
+
+        .right {
+          width: 75%;
+          padding: 15px;
+          background: linear-gradient(135deg, #0f172a, #1e293b);
+          color: white;
+          overflow-y: auto;
+        }
+
+        /* HEADER FIX */
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+          color: white;
+        }
+
+        .header-right {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        /* ✅ COMMON BUTTON (aligned same level as card button) */
+        .btn-common {
+          background: linear-gradient(135deg, #f594ed, #eee01a);
+          color: black;
+          border: none;
+          padding: 8px 28px;
+          border-radius: 0px;
+          cursor: pointer;
+          height: 38px; /* 👈 IMPORTANT: matches card button height */
+        }
+
+        .btn {
+          background: linear-gradient(135deg, #f594ed, #eee01a);
+          color: black;
+          border: none;
+          padding: 8px 14px;
+          border-radius: 0px;
+          cursor: pointer;
+          height: 38px; /* 👈 match alignment */
+        }
+
+        .card {
+          background: rgba(255,255,255,0.08);
+          padding: 15px;
+          margin-top: 12px;
+          border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .details {
+          margin-top: 10px;
+          padding-top: 10px;
+          border-top: 1px solid rgba(255,255,255,0.2);
+          color: white;
+        }
+      `}),(0,b.jsx)(`div`,{className:`topbar`,children:`Product Listing Page`}),(0,b.jsxs)(`div`,{className:`container`,children:[(0,b.jsxs)(`div`,{className:`left`,children:[(0,b.jsx)(`h2`,{children:`Filters:`}),(0,b.jsxs)(`select`,{value:e,onChange:e=>t(e.target.value),children:[(0,b.jsx)(`option`,{value:``,children:`Filter by Category`}),s.map((e,t)=>(0,b.jsx)(`option`,{value:e,children:e},t))]}),(0,b.jsxs)(`select`,{value:n,onChange:e=>r(e.target.value),children:[(0,b.jsx)(`option`,{value:``,children:`Location`}),c.map((e,t)=>(0,b.jsx)(`option`,{value:e,children:e},t))]})]}),(0,b.jsxs)(`div`,{className:`right`,children:[(0,b.jsxs)(`div`,{className:`header`,children:[(0,b.jsx)(`h1`,{style:{color:`white`},children:`Product Name`}),(0,b.jsx)(`div`,{className:`header-right`,children:(0,b.jsx)(`button`,{className:`btn-common`,onClick:()=>alert(`Common View Details Clicked`),children:`View Details`})})]}),l.map(e=>(0,b.jsxs)(`div`,{className:`card`,children:[(0,b.jsxs)(`div`,{className:`card-header`,children:[(0,b.jsxs)(`div`,{children:[(0,b.jsx)(`h4`,{children:e.name}),(0,b.jsx)(`p`,{children:e.seller})]}),(0,b.jsx)(`button`,{className:`btn`,onClick:()=>a(i===e.id?null:e.id),children:i===e.id?`Hide`:`View Details`})]}),i===e.id&&(0,b.jsxs)(`div`,{className:`details`,children:[(0,b.jsxs)(`p`,{children:[(0,b.jsx)(`b`,{children:`Category:`}),` `,e.category]}),(0,b.jsxs)(`p`,{children:[(0,b.jsx)(`b`,{children:`Location:`}),` `,e.location]}),(0,b.jsxs)(`p`,{children:[(0,b.jsx)(`b`,{children:`Price:`}),` `,e.price]})]})]},e.id))]})]})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``},{name:`Product 5`,seller:`Seller 5`,image:``},{name:`Product 6`,seller:`Seller 6`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
         
 html, body, #root {
   width: 100%;
@@ -567,7 +683,7 @@ html, body, #root {
   content: "";
   flex: 1;
   height: 2px;
-  background: rgba(27, 228, 211, 0.9);
+  background: orange;
   margin: 0 15px;
 }
 
@@ -620,4 +736,4 @@ html, body, #root {
   color: gray;
 }
 
-      `}),(0,b.jsxs)(`div`,{className:`navbar`,children:[(0,b.jsx)(`div`,{children:`MyLogo`}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{onClick:()=>r(`home`),children:`Home`}),(0,b.jsx)(`li`,{onClick:()=>r(`products`),children:`Products`}),(0,b.jsx)(`li`,{onClick:()=>r(`jobs`),children:`Jobs`}),(0,b.jsx)(`li`,{onClick:()=>r(`login`),children:`Login`}),(0,b.jsx)(`li`,{onClick:()=>r(`register`),children:`Register`})]}),(0,b.jsx)(`button`,{className:`toggle-btn`,onClick:()=>t(!e),children:e?`☀️`:`🌙`})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`section-box hero search-section`,children:[(0,b.jsx)(`h1`,{children:`Search Products....`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{placeholder:`Search products...`,value:i,onChange:e=>a(e.target.value)}),(0,b.jsx)(`button`,{children:`🔍︎`})]})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h1`,{style:{textAlign:`center`,marginBottom:`25px`,color:`orange`,fontSize:`42px`},children:`Browse Categories`}),(0,b.jsx)(`div`,{className:`categories`,children:[`Category 1`,`Category 2`,`Category 3`,`Category 4`,`Category 6`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h2`,{className:`section-title`,children:`Featured Products`}),(0,b.jsx)(`div`,{className:`products`,children:o.map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`div`,{className:`product-image`,children:(0,b.jsx)(`img`,{src:e.image||`https://cdn-icons-png.flaticon.com/512/1829/1829586.png`,alt:`product`})}),(0,b.jsxs)(`div`,{className:`product-info`,children:[(0,b.jsx)(`div`,{className:`product-name`,style:{cursor:`pointer`},onClick:()=>alert(`Coming Soon: ${e.name}`),children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]})]},t))})]})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r}),n===`login`&&(0,b.jsx)(me,{})]})},{})}));
+      `}),(0,b.jsxs)(`div`,{className:`navbar`,children:[(0,b.jsx)(`div`,{children:`MyLogo`}),(0,b.jsxs)(`ul`,{className:`nav-links`,children:[(0,b.jsx)(`li`,{onClick:()=>r(`home`),children:`Home`}),(0,b.jsx)(`li`,{onClick:()=>r(`products`),children:`Products`}),(0,b.jsx)(`li`,{onClick:()=>r(`jobs`),children:`Jobs`}),(0,b.jsx)(`li`,{onClick:()=>r(`login`),children:`Login`}),(0,b.jsx)(`li`,{onClick:()=>r(`register`),children:`Register`})]}),(0,b.jsx)(`button`,{className:`toggle-btn`,onClick:()=>t(!e),children:e?`☀️`:`🌙`})]}),n===`home`&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsxs)(`div`,{className:`section-box hero search-section`,children:[(0,b.jsx)(`h1`,{children:`Search Products....`}),(0,b.jsxs)(`div`,{className:`search-box`,children:[(0,b.jsx)(`input`,{placeholder:`Search products...`,value:i,onChange:e=>a(e.target.value)}),(0,b.jsx)(`button`,{children:`🔍︎`})]})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h1`,{style:{textAlign:`center`,marginBottom:`25px`,color:`orange`,fontSize:`42px`},children:`Browse Categories`}),(0,b.jsx)(`div`,{className:`categories`,children:[`Category 1`,`Category 2`,`Category 3`,`Category 4`,`Category 6`].map((e,t)=>(0,b.jsx)(`div`,{className:`category`,children:e},t))})]}),(0,b.jsxs)(`div`,{className:`section-box`,children:[(0,b.jsx)(`h2`,{className:`section-title`,children:`Featured Products`}),(0,b.jsx)(`div`,{className:`products`,children:o.map((e,t)=>(0,b.jsxs)(`div`,{className:`product-card`,children:[(0,b.jsx)(`div`,{className:`product-image`,children:(0,b.jsx)(`img`,{src:e.image||`https://cdn-icons-png.flaticon.com/512/1829/1829586.png`,alt:`product`})}),(0,b.jsxs)(`div`,{className:`product-info`,children:[(0,b.jsx)(`div`,{className:`product-name`,style:{cursor:`pointer`},onClick:()=>alert(`Coming Soon: ${e.name}`),children:e.name}),(0,b.jsx)(`div`,{className:`seller`,children:e.seller})]})]},t))})]})]}),n===`jobs`&&(0,b.jsx)(x,{setPage:r}),n===`login`&&(0,b.jsx)(me,{}),n===`products`&&(0,b.jsx)(D,{setPage:r})]})},{})}));
