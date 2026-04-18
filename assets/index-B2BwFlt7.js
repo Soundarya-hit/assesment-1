@@ -215,7 +215,7 @@ Error generating stack: `+e.message+`
         }
 
         .topbar h2 {
-          font-size: 34px;
+          font-size: 38px;
           color: #66e8ec;
         }
 
@@ -241,11 +241,11 @@ Error generating stack: `+e.message+`
         }
 
         /* UNDER BAR */
-        .underbar {
-          flex: 1;
-          display: flex;
-          background: transparent;
-        }
+       .underbar {
+  display: flex;
+  align-items: flex-start;  /* ✅ important */
+  background: transparent;
+}
 
         /* SIDEBAR */
        .sidebar {
@@ -303,21 +303,25 @@ Error generating stack: `+e.message+`
         }
 
         /* RIGHT CONTENT */
-        .main {
-          flex: 1;
-          padding: 20px;
-          margin: 20px; 
-          background: rgba(255,255,255,0.08);
-          backdrop-filter: blur(12px);
-          color: white;
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-        }
+       .main {
+  padding: 20px;
+  margin: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  color: white;
+  border-radius: 0px;
+
+  display: inline-block;   /* ✅ shrink to content */
+  height: fit-content;     /* ✅ no extra height */
+  width: 90%;
+}
 
         .welcome {
-          font-size: 28px;
+          font-size: 38px;
           margin-bottom: 10px;
           color: #66e8ec;
+          text-align: left;
+          
         }
 
         .row {
@@ -336,6 +340,7 @@ Error generating stack: `+e.message+`
           justify-content: space-between;
           align-items: center;
           transition: 0.3s;
+          font-size:25px;
         }
 
         .card:hover {
@@ -368,7 +373,7 @@ Error generating stack: `+e.message+`
         .btn:hover {
           background: rgba(255,255,255,0.35);
         }
-      `}),(0,b.jsxs)(`div`,{className:`app`,children:[(0,b.jsxs)(`div`,{className:`topbar`,children:[(0,b.jsx)(`h2`,{children:`Seller Dashboard`}),(0,b.jsxs)(`div`,{className:`search-group`,children:[(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 1`,value:n.s1,onChange:e=>r({...n,s1:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 2`,value:n.s2,onChange:e=>r({...n,s2:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 3`,value:n.s3,onChange:e=>r({...n,s3:e.target.value})})]})]})]}),(0,b.jsxs)(`div`,{className:`underbar`,children:[(0,b.jsx)(`ul`,{className:`sidebar`,children:Object.keys(a).map(n=>(0,b.jsxs)(`li`,{className:e===n?`active`:``,onClick:()=>t(n),children:[(0,b.jsx)(`span`,{className:`icon`,children:a[n]}),(0,b.jsx)(`span`,{children:n})]},n))}),(0,b.jsxs)(`div`,{className:`main`,children:[(0,b.jsx)(`div`,{className:`welcome`,children:`Welcome, Seller!`}),(0,b.jsx)(`h2`,{style:{color:`white`},children:e}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Total Products`),children:[(0,b.jsxs)(`div`,{children:[`Total Products `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`💲`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`📦`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Profile Views`),children:[(0,b.jsxs)(`div`,{children:[`Profile Views `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`4`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`👤`})]})]}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Add Product`),children:[(0,b.jsx)(`div`,{children:`Add Product`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`➕`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Post Job`),children:[(0,b.jsx)(`div`,{children:`Post Job`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`💼`})]})]}),(0,b.jsxs)(`div`,{className:`buttons`,children:[(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Add Product Button`),children:`Add Product`}),(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Post Job Button`),children:`Post Job`})]})]})]})]})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``},{name:`Product 5`,seller:`Seller 5`,image:``},{name:`Product 6`,seller:`Seller 6`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
+      `}),(0,b.jsxs)(`div`,{className:`app`,children:[(0,b.jsxs)(`div`,{className:`topbar`,children:[(0,b.jsx)(`h2`,{children:`Seller Dashboard`}),(0,b.jsxs)(`div`,{className:`search-group`,children:[(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 1`,value:n.s1,onChange:e=>r({...n,s1:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 2`,value:n.s2,onChange:e=>r({...n,s2:e.target.value})})]}),(0,b.jsxs)(`div`,{className:`search-box`,children:[`🔍`,(0,b.jsx)(`input`,{placeholder:`Search 3`,value:n.s3,onChange:e=>r({...n,s3:e.target.value})})]})]})]}),(0,b.jsxs)(`div`,{className:`underbar`,children:[(0,b.jsx)(`ul`,{className:`sidebar`,children:Object.keys(a).map(n=>(0,b.jsxs)(`li`,{className:e===n?`active`:``,onClick:()=>t(n),children:[(0,b.jsx)(`span`,{className:`icon`,children:a[n]}),(0,b.jsx)(`span`,{children:n})]},n))}),(0,b.jsxs)(`div`,{className:`main`,children:[(0,b.jsx)(`div`,{className:`welcome`,children:`Welcome, Seller!`}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Total Products`),children:[(0,b.jsxs)(`div`,{children:[`Total Products `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`💲`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`📦`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Profile Views`),children:[(0,b.jsxs)(`div`,{children:[`Profile Views `,(0,b.jsx)(`br`,{}),(0,b.jsx)(`b`,{children:`4`})]}),(0,b.jsx)(`div`,{className:`card-icon`,children:`👤`})]})]}),(0,b.jsxs)(`div`,{className:`row`,children:[(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Add Product`),children:[(0,b.jsx)(`div`,{children:`Add Product`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`➕`})]}),(0,b.jsxs)(`div`,{className:`card`,onClick:()=>i(`Post Job`),children:[(0,b.jsx)(`div`,{children:`Post Job`}),(0,b.jsx)(`div`,{className:`card-icon`,children:`💼`})]})]}),(0,b.jsxs)(`div`,{className:`buttons`,children:[(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Add Product Button`),children:`Add Product`}),(0,b.jsx)(`button`,{className:`btn`,onClick:()=>i(`Post Job Button`),children:`Post Job`})]})]})]})]})]})};(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(()=>{let[e,t]=(0,_.useState)(!0),[n,r]=(0,_.useState)(`home`),[i,a]=(0,_.useState)(``),o=[{name:`Product 1`,seller:`Seller 1`,image:``},{name:`Product 2`,seller:`Seller 2`,image:``},{name:`Product 3`,seller:`Seller 3`,image:``},{name:`Product 4`,seller:`Seller 4`,image:``},{name:`Product 5`,seller:`Seller 5`,image:``},{name:`Product 6`,seller:`Seller 6`,image:``}].filter(e=>e.name.toLowerCase().includes(i.toLowerCase()));return(0,b.jsxs)(`div`,{className:e?`dark`:`light`,children:[e&&(0,b.jsx)(`div`,{className:`stars`}),!e&&(0,b.jsx)(`div`,{className:`sun`}),(0,b.jsx)(`style`,{children:`
         
 html, body, #root {
   width: 100%;
