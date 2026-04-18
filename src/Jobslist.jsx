@@ -181,7 +181,7 @@ const Jobslist = () => {
 }
 
 .search-btn.active {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  background: linear-gradient(135deg, #f594ed, #eee01a);
   cursor: pointer;
 }
 
