@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Jobslist from "./Jobslist";
 import SellerDashboard from "./Seller_dashboard";
+import Products from "./Products";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [page, setPage] = useState("home");
@@ -220,7 +221,7 @@ html, body, #root {
   content: "";
   flex: 1;
   height: 2px;
-  background: rgba(27, 228, 211, 0.9);
+  background: orange;
   margin: 0 15px;
 }
 
@@ -359,6 +360,7 @@ html, body, #root {
       {page === "jobs" && <Jobslist setPage={setPage} />}
 
 {page === "login" && <SellerDashboard />}
+{page === "products" && <Products setPage={setPage} />}
     </div>
   );
 };
