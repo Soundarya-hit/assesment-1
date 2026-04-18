@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Jobslist from "./Jobslist";
 import SellerDashboard from "./Seller_dashboard";
 import Products from "./Products";
+import JobDetailsApplyPage from "./Job_details";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [page, setPage] = useState("home");

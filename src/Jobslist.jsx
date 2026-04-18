@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Jobslist = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [showResults, setShowResults] = useState(false);
@@ -188,7 +190,7 @@ const Jobslist = () => {
 .jobs {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
   gap: 20px;
   position: relative;
   z-index: 2;
@@ -197,7 +199,7 @@ const Jobslist = () => {
 .job-card {
   background: rgba(255,255,255,0.1);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 0px;
   backdrop-filter: blur(10px);
 }
 
@@ -317,14 +319,40 @@ const Jobslist = () => {
       {showResults ? (
         <div className="jobs">
           {filteredJobs.length > 0 ? (
-            filteredJobs.map((job, index) => (
-              <div className="job-card" key={index}>
-                <div>{job.title}</div>
-                <div>{job.company}</div>
-                <div>{job.location}</div>
-                <div>{job.salary}</div>
-              </div>
-            ))
+           filteredJobs.map((job, index) => (
+  <div className="job-card" key={index}>
+
+    {/* LEFT + RIGHT LAYOUT */}
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+
+      {/* LEFT SIDE CONTENT */}
+      <div>
+        <div>{job.title}</div>
+        <div>{job.company}</div>
+        <div>{job.location}</div>
+        <div>{job.salary}</div>
+      </div>
+
+      {/* RIGHT SIDE BUTTON */}
+      <button
+        style={{
+          padding: "8px 12px",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+          background: "linear-gradient(135deg, #f594ed, #eee01a)",
+          fontWeight: "bold",
+          whiteSpace: "nowrap"
+        }}
+        onClick={() => navigate("/job_details", { state: job })}
+      >
+        View Details
+      </button>
+
+    </div>
+
+  </div>
+))
           ) : (
             <p className="empty-text">No jobs found</p>
           )}
