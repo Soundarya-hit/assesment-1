@@ -55,7 +55,7 @@ const Seller_Dashboard = () => {
         }
 
         .topbar h2 {
-          font-size: 34px;
+          font-size: 38px;
           color: #66e8ec;
         }
 
@@ -81,11 +81,11 @@ const Seller_Dashboard = () => {
         }
 
         /* UNDER BAR */
-        .underbar {
-          flex: 1;
-          display: flex;
-          background: transparent;
-        }
+       .underbar {
+  display: flex;
+  align-items: flex-start;  /* ✅ important */
+  background: transparent;
+}
 
         /* SIDEBAR */
        .sidebar {
@@ -143,21 +143,25 @@ const Seller_Dashboard = () => {
         }
 
         /* RIGHT CONTENT */
-        .main {
-          flex: 1;
-          padding: 20px;
-          margin: 20px; 
-          background: rgba(255,255,255,0.08);
-          backdrop-filter: blur(12px);
-          color: white;
-          border-top-left-radius: 0px;
-          border-bottom-left-radius: 0px;
-        }
+       .main {
+  padding: 20px;
+  margin: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  color: white;
+  border-radius: 0px;
+
+  display: inline-block;   /* ✅ shrink to content */
+  height: fit-content;     /* ✅ no extra height */
+  width: 90%;
+}
 
         .welcome {
-          font-size: 28px;
+          font-size: 38px;
           margin-bottom: 10px;
           color: #66e8ec;
+          text-align: left;
+          
         }
 
         .row {
@@ -176,6 +180,7 @@ const Seller_Dashboard = () => {
           justify-content: space-between;
           align-items: center;
           transition: 0.3s;
+          font-size:25px;
         }
 
         .card:hover {
@@ -270,7 +275,6 @@ const Seller_Dashboard = () => {
           {/* RIGHT CONTENT */}
           <div className="main">
             <div className="welcome">Welcome, Seller!</div>
-            <h2 style={{ color: "white" }}>{activeMenu}</h2>
 
             <div className="row">
               <div
