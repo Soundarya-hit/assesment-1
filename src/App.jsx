@@ -136,7 +136,7 @@ html, body, #root {
 /* SECTION */
 .section-box {
   width: 100%;
-  margin: 60px auto;
+  margin: 0px auto;
   padding: 20px;
   backdrop-filter: blur(12px);
   background: transparent;
@@ -144,39 +144,51 @@ html, body, #root {
 
 /* SEARCH SECTION */
 .search-section {
-  background: rgba(148, 153, 158, 0.9);
-}
+  background: rgba(198, 231, 224, 0.96);
+  padding: 20px 35px;
 
+  display: flex;              /* ✅ enable flex */
+  flex-direction: column;
+  align-items: center;        /* ✅ horizontal center */
+  justify-content: center;    /* vertical balance */
+  text-align: center;
+}
 .search-section h1 {
   font-size: 40px;
   color: orange;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .hero {
   text-align: center;
 }
 
-/* SEARCH BOX */
 .search-box {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;   /* ✅ ensures inner alignment */
+  gap: 0px;
+
+  width: 100%;
+  max-width: 550px;          /* keeps nice centered width */
 }
 
-.search-box input {
+.search-box input { 
   padding: 12px;
-  width: 280px;
+  width: 100%;             /* ✅ takes full available space */
   border: none;
   outline: none;
+  flex: 1;    
+          
 }
 
 .search-box button {
-  padding: 12px 20px;
+  padding: 12px;
   border: none;
   background: linear-gradient(135deg, #ce0ce7, #f3f709);
   color: white;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 /* CATEGORY */
@@ -185,11 +197,12 @@ html, body, #root {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top:25px;
 }
 
 .category {
   padding: 16px 78px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08);
 }
 
 /* TITLE */
@@ -220,7 +233,7 @@ html, body, #root {
 
 .product-card {
   background: rgba(255,255,255,0.9);
-  padding: 12px 15px;
+  padding: 4px 10px;
   display: flex;
   align-items: center;
   gap: 12px;
