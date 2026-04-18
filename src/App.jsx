@@ -145,7 +145,7 @@ html, body, #root {
 /* SEARCH SECTION */
 .search-section {
   background: rgba(255,255,255,0.08);
-  padding: 20px 35px;
+  padding: 30px 35px;
 
   display: flex;              /* ✅ enable flex */
   flex-direction: column;
@@ -156,7 +156,7 @@ html, body, #root {
 .search-section h1 {
   font-size: 40px;
   color: orange;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .hero {
