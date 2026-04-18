@@ -139,7 +139,7 @@ Error generating stack: `+e.message+`
 }
 
 .search-btn.active {
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  background: linear-gradient(135deg, #f594ed, #eee01a);
   cursor: pointer;
 }
 
@@ -491,7 +491,7 @@ html, body, #root {
 
 /* SEARCH SECTION */
 .search-section {
-  background: rgba(198, 231, 224, 0.96);
+  background: rgba(255,255,255,0.08);
   padding: 20px 35px;
 
   display: flex;              /* ✅ enable flex */
