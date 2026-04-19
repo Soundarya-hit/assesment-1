@@ -95,7 +95,7 @@ const Products = () => {
           width: 100%;
           padding: 10px;
           margin-top: 10px;
-          border-radius: 6px;
+          border-radius: 0px;
         }
 
         .right {
