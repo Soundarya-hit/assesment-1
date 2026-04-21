@@ -117,6 +117,8 @@ const styles = {
 
   title: {
     fontWeight: "bold",
+    fontSize:"32px",
+    color:"orange",
   },
 
   topIcons: {
@@ -184,6 +186,7 @@ const styles = {
     border: "1px solid #ccc",
     padding: "20px",
     background: "#070707",
+    color:"orange",
   },
 
   uploadBtn: {
@@ -199,6 +202,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "10px",
     borderTop: "1px solid #ccc",
+    color:"orange",
   },
 };
 
