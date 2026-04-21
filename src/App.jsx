@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Jobslist from "./Jobslist";
 import SellerDashboard from "./Seller_dashboard";
 import Products from "./Products";
+import Jobseeker from "./Job_seeker";
+import Chat from "./Chat";
+import Admin from "./Adminpage";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [page, setPage] = useState("home");
@@ -286,6 +289,8 @@ html, body, #root {
           <li onClick={() => setPage("jobs")}>Jobs</li>
           <li onClick={() => setPage("login")}>Login</li>
           <li onClick={() => setPage("register")}>Register</li>
+          <li onClick={() => setPage("admin")}>Admin</li>
+          <li onClick={() => setPage("chat")}>💬</li>
         </ul>
 
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
@@ -361,6 +366,9 @@ html, body, #root {
 
 {page === "login" && <SellerDashboard />}
 {page === "products" && <Products setPage={setPage} />}
+{page === "chat" && <Chat setPage={setPage} />}
+{page === "register" && <Jobseeker setPage={setPage} />}
+{page === "admin" && <Admin setPage={setPage} />}
     </div>
   );
 };

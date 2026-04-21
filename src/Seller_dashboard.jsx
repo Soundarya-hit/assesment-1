@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHome, FaBox, FaBriefcase, FaUser, FaCrown } from "react-icons/fa";
 
-const Seller_Dashboard = () => {
+const Seller_dashboard = () => {
   const [activeMenu, setActiveMenu] = useState("Dashboard");
 
   const [search, setSearch] = useState({
@@ -340,4 +340,4 @@ const Seller_Dashboard = () => {
   );
 };
 
-export default Seller_Dashboard;
+export default Seller_dashboard;
