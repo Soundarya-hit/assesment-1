@@ -94,7 +94,7 @@ html, body, #root {
 }
 
 .light {
-  background: linear-gradient(to bottom, #fefce8, #e0f2fe);
+  background: linear-gradient(to bottom, #e4e3dd, #e0f2fe);
   min-height: 100vh;
   height: auto; /* ✅ allow infinite growth */
   color: #fff;
