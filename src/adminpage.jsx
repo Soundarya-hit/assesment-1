@@ -91,7 +91,7 @@ const styles = {
   },
 
   title: {
-    color: "orange",
+    color: "white",
     fontWeight: "bold",
     fontSize: "32px",
   },
@@ -133,7 +133,7 @@ const styles = {
     padding: "15px",
     borderBottom: "1px solid #ccc",
     cursor: "pointer",
-    color:"orange",
+    color:"#fff",
   },
 
   /* CONTENT */
@@ -148,7 +148,7 @@ const styles = {
   background: "transparent",
   border: "1px solid #ccc",
   marginBottom: "20px",
-  color:"orange",
+  color:"#fff",
 },
 
 statItem: {

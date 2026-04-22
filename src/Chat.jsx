@@ -69,7 +69,7 @@ const Chat = () => {
               style={{
                 ...styles.user,
                 background:
-                  activeChat === user ? "#dcdcdc" : "transparent",
+                  activeChat === user ? "#717679" : "transparent",
               }}
               onClick={() => setActiveChat(user)}
             >
@@ -152,7 +152,7 @@ const styles = {
     background: "#0f0f0f",
     borderBottom: "1px solid #ccc",
     fontSize:"32px",
-    color:"orange",
+    color:"white",
   },
 
   /* MAIN */
@@ -165,7 +165,7 @@ const styles = {
     width: "25%",
     background: "#313130",
     borderRight: "1px solid #ccc",
-    color:"orange",
+    color:"white",
     fontSize:"32px",
   },
 
@@ -175,7 +175,7 @@ const styles = {
     alignItems: "center",
     padding: "12px 15px",
     fontWeight: "bold",
-    borderBottom: "1px solid #ccc",
+    borderBottom: "1px solid #f7f0f0",
   },
 
   dropdown: {

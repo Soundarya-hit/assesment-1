@@ -60,7 +60,7 @@ const Products = () => {
         .topbar {
           background: rgba(255,255,255,0.08);
           border: 1px solid rgba(255,255,255,0.1);
-          color: orange;
+          color: white;
           padding: 40px;
           display: flex;
           justify-content: flex-start;
@@ -86,7 +86,7 @@ const Products = () => {
 
         .left h2 {
           text-align: left;
-          color: orange;
+          color: white;
           margin-bottom: 15px;
           font-size: 42px;
         }

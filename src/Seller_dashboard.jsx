@@ -56,7 +56,7 @@ const Seller_dashboard = () => {
 
         .topbar h2 {
           font-size: 38px;
-          color: orange;
+          color: #fff;
         }
 
         .search-group {
@@ -159,7 +159,7 @@ const Seller_dashboard = () => {
         .welcome {
           font-size: 38px;
           margin-bottom: 10px;
-          color: orange;
+          color: #fff;
           text-align: left;
           
         }

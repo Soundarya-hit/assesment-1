@@ -97,7 +97,7 @@ html, body, #root {
   background: linear-gradient(to bottom, #fefce8, #e0f2fe);
   min-height: 100vh;
   height: auto; /* ✅ allow infinite growth */
-  color: black;
+  color: #fff;
   position: relative;
 }
 
@@ -159,7 +159,7 @@ html, body, #root {
 }
 .search-section h1 {
   font-size: 40px;
-  color: orange;
+  color: #fff;
   margin-bottom: 25px;
 }
 
@@ -215,7 +215,7 @@ html, body, #root {
   align-items: center;
   text-align: center;
   font-size: 42px;
-  color: orange;
+  color: #fff;
   margin-bottom: 25px;
 }
 
@@ -224,7 +224,7 @@ html, body, #root {
   content: "";
   flex: 1;
   height: 2px;
-  background: orange;
+  background: #fff;
   margin: 0 15px;
 }
 
@@ -293,9 +293,7 @@ html, body, #root {
           <li onClick={() => setPage("chat")}>💬</li>
         </ul>
 
-        <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️" : "🌙"}
-        </button>
+        
       </div>
 
       {/* HOME PAGE */}
@@ -315,7 +313,7 @@ html, body, #root {
 </div>
 
           <div className="section-box">
-            <h1 style={{ textAlign: "center", marginBottom: "25px", color: "orange", fontSize: "42px" }}>
+            <h1 style={{ textAlign: "center", marginBottom: "25px", color: "#fff", fontSize: "42px" }}>
               Browse Categories
             </h1>
 

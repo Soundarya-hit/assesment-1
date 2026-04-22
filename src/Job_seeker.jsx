@@ -118,7 +118,7 @@ const styles = {
   title: {
     fontWeight: "bold",
     fontSize:"32px",
-    color:"orange",
+    color:"white",
   },
 
   topIcons: {
@@ -157,7 +157,7 @@ const styles = {
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    color:"orange",
+    color:"white",
   },
 
   menuIcon: {
@@ -186,7 +186,7 @@ const styles = {
     border: "1px solid #ccc",
     padding: "20px",
     background: "#070707",
-    color:"orange",
+    color:"white",
   },
 
   uploadBtn: {
@@ -202,7 +202,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "10px",
     borderTop: "1px solid #ccc",
-    color:"orange",
+    color:"white",
   },
 };
 

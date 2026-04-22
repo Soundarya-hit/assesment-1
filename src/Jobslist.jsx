@@ -67,7 +67,7 @@ const Jobslist = () => {
 
 <style>{`
 /* ================= YOUR ORIGINAL CSS ================= */
-.job-page { min-height: 100vh; height: auto; padding: 40px; color: orange; position: relative; overflow-x: hidden; font-family: Arial; }
+.job-page { min-height: 100vh; height: auto; padding: 40px; color: #fff; position: relative; overflow-x: hidden; font-family: Arial; }
 .professional { background: linear-gradient(135deg, #0f172a, #1e293b); }
 .clean { background: linear-gradient(135deg, #f8fafc, #e2e8f0); color: #111; }
 .dark { background: #020617; }
