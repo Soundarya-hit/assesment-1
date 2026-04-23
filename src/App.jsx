@@ -1,374 +1,225 @@
-import React, { useState } from "react";
-import Jobslist from "./Jobslist";
-import SellerDashboard from "./Seller_dashboard";
-import Products from "./Products";
-import Jobseeker from "./Job_seeker";
-import Chat from "./Chat";
-import Admin from "./Adminpage";
-const Home = () => {
-  const [darkMode, setDarkMode] = useState(true);
-  const [page, setPage] = useState("home");
-  const [search, setSearch] = useState("");
+import React from "react";
 
-  const products = [
-    { name: "Product 1", seller: "Seller 1", image: "" },
-    { name: "Product 2", seller: "Seller 2", image: "" },
-    { name: "Product 3", seller: "Seller 3", image: "" },
-    { name: "Product 4", seller: "Seller 4", image: "" },
-    { name: "Product 5", seller: "Seller 5", image: "" },
-    { name: "Product 6", seller: "Seller 6", image: "" }
+const HomePage = () => {
+  const categories = [
+    "Category 1",
+    "Category 2",
+    "Category 3",
+    "Category 4",
+    "Category 5",
   ];
 
-  const filteredProducts = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
-  
-  );
+  const products = new Array(6).fill({
+    name: "Product Name",
+    seller: "Seller Name",
+    image: "https://via.placeholder.com/50"
+  });
 
   return (
-    
-    <div className={darkMode ? "dark" : "light"}>
-      {/* BACKGROUND */}
-      {darkMode && <div className="stars"></div>}
-      {!darkMode && <div className="sun"></div>}
+    <div className="container">
+      {/* Header */}
+      <div className="header">
+        <div className="logo">Logo</div>
+        <div className="nav">
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">Jobs</a>
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+        </div>
+      </div>
+
+      {/* Search Section */}
+      <div className="search-section">
+        <h2>Search Products...</h2>
+        <div className="search-box">
+          <input type="text" placeholder="Search Products..." />
+          <button>🔍</button>
+        </div>
+      </div>
+
+      {/* Categories */}
+      <div className="categories">
+        <h3>Browse Categories</h3>
+        <div className="category-list">
+          {categories.map((cat, index) => (
+            <div key={index} className="category-card">
+              {cat}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Products */}
+      <div className="featured">
+        <div className="featured-title">
+          <span>Featured Products</span>
+        </div>
+
+        <div className="product-grid">
+          {products.map((p, index) => (
+            <div key={index} className="product-card">
+              <div>
+                <h4>{p.name}</h4>
+                <p>{p.seller}</p>
+              </div>
+
+              {/* Image instead of icon */}
+              <img src={p.image} alt="" className="product-img" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CSS */}
       <style>{`
-        
-html, body, #root {
-  width: 100%;
-  min-height: 100%;   /* ✅ FIX */
-  margin: 0;
-  padding: 0;
-  background: black;
-  overflow-x: hidden; /* ✅ prevent side scroll */
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-/* 🔥 IMPROVED STAR ANIMATION (supports long pages) */
-@keyframes starsMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(-3000px); } /* ✅ bigger movement */
-}
+  body {
+    overflow-x: hidden; /* prevent side scroll gap */
+  }
 
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* ✅ full screen only */
-  background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  animation: starsMove 120s linear infinite; /* ✅ slower + smoother */
-  z-index: 0;
-  opacity: 0.6;
-}
+  .container {
+    width: 100vw;   /* 🔥 full screen width */
+    min-height: 100vh; /* 🔥 full screen height */
+  }
 
-/* 🌞 SUN */
-@keyframes sunPulse {
-  0%,100% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.2); opacity: 1; }
-}
+  /* Header */
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+  }
 
-.sun {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, #fde047, #facc15, transparent 70%);
-  filter: blur(40px);
-  animation: sunPulse 6s infinite;
-  z-index: 0;
-}
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-/* ✅ MAIN CONTAINER FIX */
-.dark {
-  background: radial-gradient(circle at 20% 30%, #1e293b, #020617);
-  min-height: 100vh;
-  height: auto; /* ✅ allow infinite growth */
-  color: white;
-  position: relative;
-}
+  .nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+  }
 
-.light {
-  background: linear-gradient(to bottom, #e4e3dd, #e0f2fe);
-  min-height: 100vh;
-  height: auto; /* ✅ allow infinite growth */
-  color: #fff;
-  position: relative;
-}
+  /* Search */
+  .search-section {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    background: #d1caca;
+  }
 
-/* ✅ KEEP CONTENT ABOVE BACKGROUND */
-.navbar,
-.section-box {
-  position: relative;
-  z-index: 1;
-}
-
-/* NAVBAR */
-.navbar {
+  .search-box {
+  margin-top: 15px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  backdrop-filter: blur(12px);
-}
-
-.nav-links {
-  display: flex;
-  gap: 50px;
-  list-style: none;
-  margin-left: auto;
-}
-
-.nav-links li {
-  cursor: pointer;
-}
-
-.toggle-btn {
-  background: linear-gradient(135deg, #f594ed, #eee01a);
-  border: none;
-  padding: 6px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-}
-
-/* SECTION */
-.section-box {
+  justify-content: center;
   width: 100%;
-  margin: 0px auto;
-  padding: 20px;
-  backdrop-filter: blur(12px);
-  background: transparent;
 }
 
-/* SEARCH SECTION */
-.search-section {
-  background: rgba(255,255,255,0.08);
-  padding: 30px 35px;
-
-  display: flex;              /* ✅ enable flex */
-  flex-direction: column;
-  align-items: center;        /* ✅ horizontal center */
-  justify-content: center;    /* vertical balance */
-  text-align: center;
-}
-.search-section h1 {
-  font-size: 40px;
-  color: #fff;
-  margin-bottom: 25px;
-}
-
-.hero {
-  text-align: center;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;   /* ✅ ensures inner alignment */
-  gap: 0px;
-
-  width: 100%;
-  max-width: 550px;          /* keeps nice centered width */
-}
-
-.search-box input { 
+.search-box input {
+  width: 60%;              /* 🔥 increase length (change to 70–80% if needed) */
+  max-width: 800px;        /* optional limit so it doesn’t become too big */
   padding: 12px;
-  width: 100%;             /* ✅ takes full available space */
-  border: none;
+  border: 1px solid #ccc;
   outline: none;
-  flex: 1;    
-          
 }
 
 .search-box button {
-  padding: 12px;
+  padding: 12px 18px;
   border: none;
-  background: linear-gradient(135deg, #ce0ce7, #f3f709);
+  background: #666;
   color: white;
   cursor: pointer;
-  white-space: nowrap;
 }
 
-/* CATEGORY */
-.categories {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top:25px;
-}
+  /* Categories */
+  .categories {
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+  }
 
-.category {
-  padding: 16px 78px;
-  background: rgba(255,255,255,0.08);
-}
+  .category-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
 
-/* TITLE */
-.section-title {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-size: 42px;
-  color: #fff;
-  margin-bottom: 25px;
-}
+  .category-card {
+    padding: 12px 40px;
+    background: #d1caca;
+    border: 1px solid #d3cdcd;
+  }
 
-.section-title::before,
-.section-title::after {
-  content: "";
-  flex: 1;
-  height: 2px;
-  background: #fff;
-  margin: 0 15px;
-}
+  /* Featured */
+  .featured {
+    width: 100%;
+    padding: 30px 40px;
+  }
 
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+  /* Heading with lines */
+  .featured-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
 
-.product-card {
-  background: rgba(255,255,255,0.9);
-  padding: 4px 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  .featured-title::before,
+  .featured-title::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #999;
+  }
 
-.dark .product-card {
-  background: rgba(30,41,59,0.8);
-}
+  .featured-title span {
+    padding: 0 15px;
+    font-weight: bold;
+  }
 
-.product-image {
-  width: 60px;
-  height: 60px;
-  background: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+  .product-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
 
-.product-image img {
-  width: 40px;
-  height: 40px;
-}
+  .product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #d1caca;
+  }
 
-.product-info {
-  display: flex;
-  flex-direction: column;
-}
+  .product-img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+  }
 
-.product-name {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.seller {
-  font-size: 12px;
-  color: gray;
-}
-
-      `}</style>
-
-      {/* NAVBAR */}
-      <div className="navbar">
-        <div>MyLogo</div>
-
-        <ul className="nav-links">
-          <li onClick={() => setPage("home")}>Home</li>
-          <li onClick={() => setPage("products")}>Products</li>
-          <li onClick={() => setPage("jobs")}>Jobs</li>
-          <li onClick={() => setPage("login")}>Login</li>
-          <li onClick={() => setPage("register")}>Register</li>
-          <li onClick={() => setPage("admin")}>Admin</li>
-          <li onClick={() => setPage("chat")}>💬</li>
-        </ul>
-
-        
-      </div>
-
-      {/* HOME PAGE */}
-      {page === "home" && (
-        <>
-          <div className="section-box hero search-section">
-  <h1>Search Products....</h1>
-
-  <div className="search-box">
-    <input
-      placeholder="Search products..."
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-    />
-    <button>🔍︎</button>
-  </div>
-</div>
-
-          <div className="section-box">
-            <h1 style={{ textAlign: "center", marginBottom: "25px", color: "#fff", fontSize: "42px" }}>
-              Browse Categories
-            </h1>
-
-            <div className="categories">
-              {["Category 1","Category 2","Category 3","Category 4","Category 6"].map((c, i) => (
-                <div key={i} className="category">{c}</div>
-              ))}
-            </div>
-          </div>
-
-          <div className="section-box">
-            <h2 className="section-title">
-  Featured Products
-</h2>
-<div className="products">
-  {filteredProducts.map((p, i) => (
-    <div className="product-card" key={i}>
-
-      {/* LEFT SIDE - IMAGE */}
-      <div className="product-image">
-        <img
-          src={p.image || "https://cdn-icons-png.flaticon.com/512/1829/1829586.png"}
-          alt="product"
-        />
-      </div>
-
-      {/* RIGHT SIDE - INFO */}
-      <div className="product-info">
-        <div
-          className="product-name"
-          style={{ cursor: "pointer" }}
-          onClick={() => alert(`Coming Soon: ${p.name}`)}
-        >
-          {p.name}
-        </div>
-        <div className="seller">{p.seller}</div>
-      </div>
-
-    </div>
-  ))}
-</div>
-            
-          </div>
-        </>
-      )}
-
-      {page === "jobs" && <Jobslist setPage={setPage} />}
-
-{page === "login" && <SellerDashboard />}
-{page === "products" && <Products setPage={setPage} />}
-{page === "chat" && <Chat setPage={setPage} />}
-{page === "register" && <Jobseeker setPage={setPage} />}
-{page === "admin" && <Admin setPage={setPage} />}
+`}</style>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
