@@ -149,7 +149,7 @@ const styles = {
   header: {
     padding: "15px",
     fontWeight: "bold",
-    background: "#b4b0b0",
+    background: "#dcdcdc",
     borderBottom: "1px solid #ccc",
     fontSize:"32px",
     color:"black",

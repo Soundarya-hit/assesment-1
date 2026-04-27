@@ -166,7 +166,7 @@ margin:15px 0; }
 /* ✅ NEW ONLY LAYOUT CSS */
 /* ✅ TOP BAR IMPROVED */
 .top-header {
-  background: #a0a2a5;
+  background: #dcdcdc;
   padding: 15px 25px;
 
   display: flex;                 /* 🔥 main layout */
@@ -228,7 +228,7 @@ margin:15px 0; }
 }
 
 .right-topbar {
-  background: #b7b8bb;
+  background: #dcdcdc;
   padding: 15px 20px;
 
   text-align: left;          /* ✅ move to left */

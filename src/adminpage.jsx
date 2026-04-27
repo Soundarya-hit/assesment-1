@@ -146,7 +146,7 @@ const styles = {
  statsBar: {
   display: "flex",
   alignItems: "center",
-  background: "transparent",
+  background: "#dcdcdc",
   border: "1px solid #161616",
   marginBottom: "20px",
   color:"#1d1c1c",
@@ -173,7 +173,7 @@ divider: {
   },
 
   graphBox: {
-    background: "#ada8a8",
+    background: "#dcdcdc",
     padding: "20px",
     border: "1px solid #201f1f",
   },

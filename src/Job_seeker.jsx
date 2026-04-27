@@ -49,8 +49,8 @@ const Job_seeker = () => {
                 ...styles.tab,
                 background:
                   activeTab === "My Applications"
-                    ? "#bdb9b9"
-                    : "#858382)",
+                    ? "#cec6c6"
+                    : "#a1a09f",
               }}
             >
               My Applications
@@ -61,7 +61,7 @@ const Job_seeker = () => {
               style={{
                 ...styles.tab,
                 background:
-                  activeTab === "Resume" ? "#b1afac" : "#858382",
+                  activeTab === "Resume" ? "#aaa8a6" : "#bebab7",
               }}
             >
               Resume

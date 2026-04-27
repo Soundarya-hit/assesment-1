@@ -64,7 +64,7 @@ const HomePage = () => {
       {page === "home" && (
         <div className="home-page">
           <div className="search-section">
-            <h2>Search Products...</h2>
+            <h1>Search Products...</h1>
             <div className="search-box">
               <input type="text" placeholder="Search Products..." />
               
