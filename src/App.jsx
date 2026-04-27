@@ -54,9 +54,9 @@ const HomePage = () => {
           <a onClick={() => setPage("products")}>Products</a>
           <a onClick={() => setPage("jobs")}>Jobs</a>
           <a onClick={() => setPage("login")}>Login</a>
-          <a onClick={() => setPage("chat")}>Chat</a>
           <a onClick={() => setPage("seller")}>Seller</a>
           <a onClick={() => setPage("register")}>Register</a>
+          <a onClick={() => setPage("chat")}>💬</a>
         </div>
       </div>
 

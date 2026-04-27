@@ -76,19 +76,14 @@ const Job_seeker = () => {
               👤 Upload Resume
             </button>
 
-            {/* JOB LIST */}
             <div style={styles.jobRow}>
               <span>Job#1</span>
-              <span>
-                Applied ▼
-              </span>
+              <span>Applied ▼</span>
             </div>
 
             <div style={styles.jobRow}>
               <span>Job#2</span>
-              <span>
-                Interview Scheduled ✔
-              </span>
+              <span>Interview Scheduled ✔</span>
             </div>
           </div>
         </div>
@@ -106,20 +101,20 @@ const styles = {
     background: "#c5c2c2",
   },
 
-  /* TOP BAR */
+  /* 🔥 TOP BAR */
   topBar: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "10px 20px",
+    padding: "15px 20px",
     borderBottom: "1px solid #858080",
-    background: "#a59f9f",
+    background: "#ece6e6",
   },
 
   title: {
     fontWeight: "bold",
-    fontSize:"32px",
-    color:"black",
+    fontSize: "32px",
+    color: "black",
   },
 
   topIcons: {
@@ -139,7 +134,7 @@ const styles = {
     cursor: "pointer",
   },
 
-  /* MAIN */
+  /* 🔥 MAIN */
   main: {
     display: "flex",
     flex: 1,
@@ -158,7 +153,7 @@ const styles = {
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    color:"black",
+    color: "black",
   },
 
   menuIcon: {
@@ -187,7 +182,7 @@ const styles = {
     border: "1px solid #ccc",
     padding: "20px",
     background: "#e9e5e5",
-    color:"black",
+    color: "black",
   },
 
   uploadBtn: {
@@ -203,7 +198,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "10px",
     borderTop: "1px solid #ccc",
-    color:"black",
+    color: "black",
   },
 };
 

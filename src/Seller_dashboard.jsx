@@ -23,7 +23,8 @@ const SellerDashboard = () => {
       case "Dashboard":
         return (
           <>
-            <h2>Welcome, Seller!</h2>
+            {/* ✅ NOW placed correctly */}
+            <h2 style={styles.welcome}>Welcome, Seller</h2>
 
             <div style={styles.cardContainer}>
               <div style={styles.card}>
@@ -77,7 +78,7 @@ const SellerDashboard = () => {
     <div style={styles.wrapper}>
       {/* 🔥 Top Header */}
       <div style={styles.header}>
-        <h2>Seller Dashboard</h2>
+        <h2 style={styles.headerText}>Seller Dashboard</h2>
       </div>
 
       <div style={styles.container}>
@@ -114,22 +115,29 @@ export default SellerDashboard;
 const styles = {
   wrapper: {
     fontFamily: "Arial, sans-serif",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
   },
 
- header: {
-  height: "60px",
-  backgroundColor: "#e0e0e0",
-  display: "flex",
-  alignItems: "center",
-  paddingLeft: "20px",
-  borderBottom: "1px solid #ccc",
-  fontSize: "26px",   // 🔥 increase this value (try 26–32px)
-  fontWeight: "bold", // optional: makes it look stronger
-},
+  header: {
+    height: "65px",
+    backgroundColor: "#e0e0e0",
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: "20px",
+    borderBottom: "1px solid #616161",
+  },
+
+  headerText: {
+    fontSize: "38px",
+    fontWeight: "bold",
+    margin: 0,
+  },
 
   container: {
     display: "flex",
-    height: "calc(100vh - 60px)",
+    height: "calc(100vh - 90px)",
   },
 
   sidebar: {
@@ -152,17 +160,24 @@ const styles = {
     cursor: "pointer",
     borderRadius: "4px",
     transition: "0.3s",
-    color: "#000", // 🔥 default black
+    color: "#000",
   },
 
   icon: {
-    fontSize: "16px",
+    fontSize: "18px",
   },
 
   content: {
     flex: 1,
     padding: "20px",
     backgroundColor: "#d8d4d4",
+  },
+
+  /* 🔥 NEW POSITION STYLE */
+  welcome: {
+    marginBottom: "10px",
+    fontSize: "24px",
+    fontWeight: "bold",
   },
 
   cardContainer: {
