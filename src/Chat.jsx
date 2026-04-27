@@ -147,13 +147,16 @@ const styles = {
 
   /* HEADER */
   header: {
-    padding: "15px",
-    fontWeight: "bold",
-    background: "#dcdcdc",
-    borderBottom: "1px solid #ccc",
-    fontSize:"32px",
-    color:"black",
-  },
+  padding: "15px",
+  fontWeight: "bold",
+  background: "#dcdcdc",
+  borderBottom: "1px solid #ccc",
+  fontSize: "32px",
+  color: "black",
+
+  textAlign: "left",     // 🔥 force left alignment
+  paddingLeft: "20px",   // 🔥 push to left corner nicely
+},
 
   /* MAIN */
   main: {
@@ -234,7 +237,7 @@ const styles = {
   message: {
     background: "#a5a7a6",
     padding: "10px 15px",
-    borderRadius: "10px",
+    borderRadius: "2px",
     maxWidth: "55%",
   },
 
