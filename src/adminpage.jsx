@@ -6,7 +6,7 @@ const Adminpage = () => {
     <div style={styles.container}>
       {/* 🔥 TOP BAR */}
       <div style={styles.topBar}>
-        <div style={styles.title}>Admin Page</div>
+        <div style={styles.title}>Admin Dashboard</div>
 
         <div style={styles.searchContainer}>
           <div style={styles.searchBox}>
@@ -78,6 +78,7 @@ const styles = {
     height: "100vh",
     display: "flex",
     flexDirection: "column",
+    background : " #d3caca",
   },
 
   /* TOP BAR */
@@ -86,12 +87,12 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 20px",
-    borderBottom: "1px solid #ccc",
-    background: "#070707",
+    borderBottom: "1px solid #131212",
+    background: "#f8f3f3",
   },
 
   title: {
-    color: "white",
+    color: "gray",
     fontWeight: "bold",
     fontSize: "32px",
   },
@@ -107,7 +108,7 @@ const styles = {
     border: "1px solid #ccc",
     padding: "5px 8px",
     borderRadius: "4px",
-    background: "#fff",
+    background: "#fdf9f9",
   },
 
   input: {
@@ -125,15 +126,15 @@ const styles = {
   /* SIDEBAR */
   sidebar: {
     width: "220px",
-    borderRight: "1px solid #ccc",
+    borderRight: "1px solid #2c2929",
     background: "transparent",
   },
 
   menuItem: {
     padding: "15px",
-    borderBottom: "1px solid #ccc",
+    borderBottom: "1px solid #202020",
     cursor: "pointer",
-    color:"#fff",
+    color:"#1d1c1c",
   },
 
   /* CONTENT */
@@ -146,9 +147,9 @@ const styles = {
   display: "flex",
   alignItems: "center",
   background: "transparent",
-  border: "1px solid #ccc",
+  border: "1px solid #161616",
   marginBottom: "20px",
-  color:"#fff",
+  color:"#1d1c1c",
 },
 
 statItem: {
@@ -160,21 +161,21 @@ statItem: {
 divider: {
   width: "1px",
   height: "50px",
-  background: "#ccc",
+  background: "#161616",
 },
 
   card: {
     flex: 1,
-    background: "#111111",
+    background: "#1b1a1a",
     padding: "15px",
     textAlign: "center",
     border: "1px solid #ccc",
   },
 
   graphBox: {
-    background: "#0e0d0d",
+    background: "#ada8a8",
     padding: "20px",
-    border: "1px solid #ccc",
+    border: "1px solid #201f1f",
   },
 };
 

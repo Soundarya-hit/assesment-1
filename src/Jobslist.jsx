@@ -67,24 +67,39 @@ const Jobslist = () => {
 
 <style>{`
 /* ================= YOUR ORIGINAL CSS ================= */
-.job-page { min-height: 100vh; height: auto; padding: 40px; color: #fff; position: relative; overflow-x: hidden; font-family: Arial; }
-.professional { background: linear-gradient(135deg, #0f172a, #1e293b); }
-.clean { background: linear-gradient(135deg, #f8fafc, #e2e8f0); color: #111; }
-.dark { background: #020617; }
+.job-page { min-height: 100vh;
+ height: auto; padding: 40px;
+ color: #fff; position: relative; 
+ overflow-x: hidden; 
+ font-family: Arial; 
+ background: #cfcdcd;}
 
-.bg-layer { position: fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
 
-.cap, .paper, .sparkle { position:absolute; top:-50px; opacity:0.6; }
 
-.search-container { display:flex; gap:15px; justify-content:center; margin-top:20px; flex-wrap:wrap; z-index:2; position:relative; }
-.input-box { padding:14px 18px; border-radius:0px; border:none; width:260px; }
-.search-btn { padding:14px 20px; border-radius:0px; border:none; background:gray; color:white; }
+.bg-layer { position: fixed; 
+top:0; left:0; width:100%; height:100%; 
+z-index:0; pointer-events:none; }
+
+.cap, .paper, .sparkle { position:absolute; 
+top:-50px; opacity:0.6; }
+
+.search-container { display:flex; 
+gap:15px; justify-content:center; 
+margin-top:20px; flex-wrap:wrap;
+ z-index:2; position:relative; }
+.input-box { padding:14px 18px;
+ border-radius:0px; border:none; width:260px; }
+.search-btn { padding:14px 20px; 
+border-radius:0px; border:none;
+ background: #b8aeae; color:white; }
 .search-btn.active { background: linear-gradient(135deg,#f594ed,#eee01a); }
 
-.jobs { margin-top:20px; display:grid; grid-template-columns:repeat(1,minmax(250px,1fr)); gap:20px; z-index:2; position:relative; }
+.jobs { margin-top:20px; display:grid; 
+grid-template-columns:repeat(1,minmax(250px,1fr));
+ gap:20px; z-index:2; position:relative; }
 
 .job-card {
-  background: rgba(255,255,255,0.1);
+  background: rgb(153, 149, 149);
   padding: 20px;
   border-radius: 0px;
   display: flex;
@@ -102,7 +117,7 @@ const Jobslist = () => {
   padding: 10px 16px;
   border: none;
   border-radius: 0px;
-  background: linear-gradient(135deg, #22c55e, #4ade80);
+  background: linear-gradient(135deg, #b3bbb6, #818884);
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -116,24 +131,41 @@ const Jobslist = () => {
 .left-side {
   flex: 1;
 
-  background: rgba(255,255,255,0.05);  /* ✅ light glass effect */
+  background: rgba(243, 238, 238, 0.05);  /* ✅ light glass effect */
   padding: 20px;                       /* spacing inside */
   border-radius: 6px;                  /* optional (remove if you want sharp edges) */
 }
 
 /* DETAILS */
-.container { margin-top:20px; padding:20px; background:rgba(255,255,255,0.05); border-radius:0px; }
-.line { height:1px; background:rgba(255,255,255,0.2); margin:15px 0; }
-.descriptionBox { padding:15px; background:rgba(255,255,255,0.08); border-radius:0px; min-height:120px; }
-.applyBtn { padding:12px 25px; background:linear-gradient(135deg,#f594ed,#eee01a); border:none; border-radius:0px; font-weight:bold; }
+.container {
+  margin-top: 20px;
+  padding: 20px;             /* increased spacing */
+  background: rgba(247, 238, 238, 0.2);
+  width: 100%;               /* ✅ full width */
+  max-width: 100%;           /* ✅ prevent overflow */
+  box-sizing: border-box;    /* ✅ important */
+}
+.line { height:1px; 
+background:rgba(255,255,255,0.2); 
+margin:15px 0; }
+.descriptionBox { padding:15px;
+ background:rgba(255,255,255,0.08);
+  border-radius:0px; min-height:120px; }
+.applyBtn { padding:8px 10px;
+ background:linear-gradient(135deg,#f594ed,#eee01a);
+  border:none; border-radius:0px; font-weight:bold; }
 .actions { display:flex; gap:10px; }
-.uploadBtn { flex:1; text-align:center; padding:12px; background:#2563eb; border-radius:0px; cursor:pointer; }
-.submitBtn { flex:1; padding:12px; background:#16a34a; border:none; border-radius:0px; color:white; }
+.uploadBtn { flex:1; text-align:center;
+ padding:8px 10px; background:#2563eb;
+  border-radius:0px; cursor:pointer; }
+.submitBtn { flex:1; padding:8px 10px;
+ background:#16a34a; border:none; border-radius:0px;
+  color:white; }
 
 /* ✅ NEW ONLY LAYOUT CSS */
 /* ✅ TOP BAR IMPROVED */
 .top-header {
-  background: #111827;
+  background: #a0a2a5;
   padding: 15px 25px;
 
   display: flex;                 /* 🔥 main layout */
@@ -159,7 +191,7 @@ const Jobslist = () => {
 /* INPUTS */
 .top-search {
   padding: 8px 12px;
-  border: none;
+  border: 2px solid black;
   outline: none;
   border-radius: 4px;
 }
@@ -168,7 +200,7 @@ const Jobslist = () => {
 .top-search-btn {
   padding: 8px 12px;
   border: none;
-  background: linear-gradient(135deg, #f594ed, #eee01a);
+  background: gray;
   color: black;
   cursor: pointer;
   border-radius: 4px;
@@ -183,8 +215,9 @@ const Jobslist = () => {
 /* RIGHT SIDE */
 .right-side {
   flex: 1;
-  border-left: 1px solid rgba(255,255,255,0.2); /* ✅ vertical line */
-  padding-left: 20px;  /* space after line */
+  border-left: 1px solid rgba(121, 115, 115, 0.94);
+  padding-left: 20px;
+  overflow: hidden;          /* ✅ stops overflow */
 }
 
 /* LEFT SIDE (optional spacing) */
@@ -194,7 +227,7 @@ const Jobslist = () => {
 }
 
 .right-topbar {
-  background: #111827;
+  background: #b7b8bb;
   padding: 15px 20px;
 
   text-align: left;          /* ✅ move to left */
@@ -208,17 +241,13 @@ const Jobslist = () => {
   text-align: left;     /* ✅ force left alignment */
   margin: 0 0 10px 0;   /* optional clean spacing */
   font-size: 32px;
-  color: #fff;
+  color: #666;
 }
 
 `}</style>
 
       {/* BACKGROUND */}
-      <div className="bg-layer">
-        {caps.map((_, i) => <span key={i} className="cap">🎓</span>)}
-        {papers.map((_, i) => <span key={i} className="paper">📄</span>)}
-        {sparkles.map((_, i) => <span key={i} className="sparkle"></span>)}
-      </div>
+     
 
       <div className="top-header">
 

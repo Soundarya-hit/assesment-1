@@ -149,7 +149,7 @@ const styles = {
   header: {
     padding: "15px",
     fontWeight: "bold",
-    background: "#0f0f0f",
+    background: "#b4b0b0",
     borderBottom: "1px solid #ccc",
     fontSize:"32px",
     color:"white",
@@ -163,7 +163,7 @@ const styles = {
 
   sidebar: {
     width: "25%",
-    background: "#313130",
+    background: "#bdbdb9",
     borderRight: "1px solid #ccc",
     color:"white",
     fontSize:"32px",
@@ -198,7 +198,7 @@ const styles = {
 
   onlineBtn: {
     fontSize: "10px",
-    background: "#ad8c8c",
+    background: "#979494",
     padding: "3px 6px",
     borderRadius: "5px",
   },
@@ -213,7 +213,7 @@ const styles = {
     flex: 1,
     padding: "20px",
     overflowY: "auto",
-     background: "#1e1e1e",
+     background: "#ccc3c3",
   },
 
   row: {
@@ -226,12 +226,12 @@ const styles = {
     width: "28px",
     height: "28px",
     borderRadius: "50%",
-    background: "#bd8a8a",
+    background: "#8a8787",
     margin: "0 8px",
   },
 
   message: {
-    background: "#089471",
+    background: "#a5a7a6",
     padding: "10px 15px",
     borderRadius: "10px",
     maxWidth: "55%",
@@ -241,7 +241,7 @@ const styles = {
     display: "flex",
     padding: "10px",
     borderTop: "1px solid #ccc",
-    background: "#f3b86c",
+    background: "#aaa9a7",
   },
 
   input: {
@@ -254,7 +254,7 @@ const styles = {
   button: {
     marginLeft: "10px",
     padding: "10px 15px",
-    background: "#b8805b",
+    background: "#92908e",
     border: "none",
     cursor: "pointer",
   },
