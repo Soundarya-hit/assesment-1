@@ -1,337 +1,208 @@
 import React, { useState } from "react";
-import { FaHome, FaBox, FaBriefcase, FaUser, FaCrown } from "react-icons/fa";
+import {
+  FaHome,
+  FaBox,
+  FaBriefcase,
+  FaEye,
+  FaCrown,
+} from "react-icons/fa";
 
-const Seller_dashboard = () => {
+const SellerDashboard = () => {
   const [activeMenu, setActiveMenu] = useState("Dashboard");
 
-  const [search, setSearch] = useState({
-    s1: "",
-    s2: "",
-    s3: ""
-  });
+  const menuItems = [
+    { name: "Dashboard", icon: <FaHome /> },
+    { name: "My Products", icon: <FaBox /> },
+    { name: "Job Listings", icon: <FaBriefcase /> },
+    { name: "Profile Views", icon: <FaEye /> },
+    { name: "Membership", icon: <FaCrown /> },
+  ];
 
-  const handleClick = (name) => {
-    alert(name + " clicked");
-  };
+  const renderContent = () => {
+    switch (activeMenu) {
+      case "Dashboard":
+        return (
+          <>
+            <h2>Welcome, Seller!</h2>
 
-  const icons = {
-    Dashboard: <FaHome />,
-    "My Products": <FaBox />,
-    "Job Listings": <FaBriefcase />,
-    "Profile Views": <FaUser />,
-    Membership: <FaCrown />
+            <div style={styles.cardContainer}>
+              <div style={styles.card}>
+                <p>Total Products</p>
+                <h3>$</h3>
+              </div>
+
+              <div style={styles.card}>
+                <p>Profile Views</p>
+                <h3>4</h3>
+              </div>
+            </div>
+
+            <div style={styles.cardContainer}>
+              <div style={styles.card}>
+                <p>Add Product</p>
+                <div style={styles.iconBox}>▶</div>
+              </div>
+
+              <div style={styles.card}>
+                <p>Post Job</p>
+                <div style={styles.iconBox}>📅</div>
+              </div>
+            </div>
+
+            <div style={styles.buttonContainer}>
+              <button style={styles.button}>Add Product</button>
+              <button style={styles.button}>Post Job</button>
+            </div>
+          </>
+        );
+
+      case "My Products":
+        return <h2>📦 My Products Page</h2>;
+
+      case "Job Listings":
+        return <h2>💼 Job Listings Page</h2>;
+
+      case "Profile Views":
+        return <h2>👁 Profile Views Page</h2>;
+
+      case "Membership":
+        return <h2>👑 Membership Page</h2>;
+
+      default:
+        return <h2>Welcome</h2>;
+    }
   };
 
   return (
-    <>
-      <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        body {
-          font-family: Arial, sans-serif;
-        }
-
-        /* FULL PAGE */
-        .app {
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          background: #a3a3a7;
-        }
-
-        /* TOP BAR */
-        .topbar {
-          height: 70px;
-          background: rgba(255,255,255,0.25);
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 20px;
-        
-        }
-
-        .topbar h2 {
-          font-size: 38px;
-          color: #0e0d0d;
-        }
-
-        .search-group {
-          display: flex;
-          gap: 10px;
-        }
-
-        .search-box {
-          background: rgba(255,255,255,0.2);
-          padding: 5px 10px;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-        }
-
-        .search-box input {
-          background: transparent;
-          border: none;
-          outline: none;
-          color: black;
-          width: 100px;
-        }
-
-        /* UNDER BAR */
-        .underbar {
-          display: flex;
-          align-items: flex-start;
-        
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-          width: 220px;
-          padding: 20px;
-          background: gray;
-          position: relative;
-        }
-
-        .sidebar li {
-          list-style: none;
-          padding: 14px;
-          margin-bottom: 10px;
-          cursor: pointer;
-          border-radius: 10px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          position: relative;
-          transition: 0.3s;
-          z-index: 1;
-        }
-
-        /* ✅ FIXED: removed overflow white strip */
-        .sidebar li.active::before {
-          content: "";
-          position: absolute;
-          left: 0;              /* FIX */
-          top: 0;
-          width: 100%;          /* FIX */
-          height: 100%;
-          background: rgba(255,255,255,0.25);
-          z-index: -1;
-          transition: 0.3s;
-        }
-
-        .sidebar li:hover::before {
-          content: "";
-          position: absolute;
-          left: 0;              /* FIX */
-          top: 0;
-          width: 100%;          /* FIX */
-          height: 100%;
-          background: rgba(255,255,255,0.12);
-          z-index: -1;
-        }
-
-        .icon {
-          font-size: 18px;
-        }
-
-        /* RIGHT CONTENT */
-        .main {
-          padding: 20px;
-          margin: 20px;
-          background: rgba(255,255,255,0.08);
-          backdrop-filter: blur(12px);
-          color: black;
-          border-radius: 0px;
-
-          display: inline-block;
-          height: fit-content;
-          width: 90%;
-        }
-
-        .welcome {
-          font-size: 38px;
-          margin-bottom: 10px;
-          color: #fff;
-          text-align: left;
-        }
-
-        .row {
-          display: flex;
-          gap: 20px;
-          margin: 20px 0;
-        }
-
-        .card {
-          flex: 1;
-          padding: 30px 40px;
-          border-radius: 0px;
-          background: rgba(255,255,255,0.15);
-          cursor: pointer;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          transition: 0.3s;
-          font-size: 25px;
-        }
-
-        .card:hover {
-          transform: translateY(-6px);
-          background: rgba(255,255,255,0.25);
-        }
-
-        .card-icon {
-          font-size: 40px;
-        }
-
-        .buttons {
-          display: flex;
-          gap: 20px;
-          margin-top: 20px;
-        }
-
-        .btn {
-          flex: 1;
-          padding: 25px 20px;
-          border: none;
-          border-radius: 0px;
-          cursor: pointer;
-          font-weight: bold;
-          background: rgba(255,255,255,0.2);
-          color: white;
-          font-size: 22px;
-        }
-
-        .btn:hover {
-          background: rgba(255,255,255,0.35);
-        }
-      `}</style>
-
-      <div className="app">
-        {/* TOP BAR */}
-        <div className="topbar">
-          <h2>Seller Dashboard</h2>
-
-          <div className="search-group">
-            <div className="search-box">
-              🔍
-              <input
-                placeholder="Search 1"
-                value={search.s1}
-                onChange={(e) =>
-                  setSearch({ ...search, s1: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="search-box">
-              🔍
-              <input
-                placeholder="Search 2"
-                value={search.s2}
-                onChange={(e) =>
-                  setSearch({ ...search, s2: e.target.value })
-                }
-              />
-            </div>
-
-            <div className="search-box">
-              🔍
-              <input
-                placeholder="Search 3"
-                value={search.s3}
-                onChange={(e) =>
-                  setSearch({ ...search, s3: e.target.value })
-                }
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* UNDER BAR */}
-        <div className="underbar">
-          {/* SIDEBAR */}
-          <ul className="sidebar">
-            {Object.keys(icons).map((item) => (
-              <li
-                key={item}
-                className={activeMenu === item ? "active" : ""}
-                onClick={() => setActiveMenu(item)}
-              >
-                <span className="icon">{icons[item]}</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* RIGHT CONTENT */}
-          <div className="main">
-            <div className="welcome">Welcome, Seller!</div>
-
-            <div className="row">
-              <div
-                className="card"
-                onClick={() => handleClick("Total Products")}
-              >
-                <div>
-                  Total Products <br />
-                  <b>💲</b>
-                </div>
-                <div className="card-icon">📦</div>
-              </div>
-
-              <div
-                className="card"
-                onClick={() => handleClick("Profile Views")}
-              >
-                <div>
-                  Profile Views <br />
-                  <b>4</b>
-                </div>
-                <div className="card-icon">👤</div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div
-                className="card"
-                onClick={() => handleClick("Add Product")}
-              >
-                <div>Add Product</div>
-                <div className="card-icon">➕</div>
-              </div>
-
-              <div
-                className="card"
-                onClick={() => handleClick("Post Job")}
-              >
-                <div>Post Job</div>
-                <div className="card-icon">💼</div>
-              </div>
-            </div>
-
-            <div className="buttons">
-              <button
-                className="btn"
-                onClick={() => handleClick("Add Product Button")}
-              >
-                Add Product
-              </button>
-
-              <button
-                className="btn"
-                onClick={() => handleClick("Post Job Button")}
-              >
-                Post Job
-              </button>
-            </div>
-          </div>
-        </div>
+    <div style={styles.wrapper}>
+      {/* 🔥 Top Header */}
+      <div style={styles.header}>
+        <h2>Seller Dashboard</h2>
       </div>
-    </>
+
+      <div style={styles.container}>
+        {/* Sidebar */}
+        <div style={styles.sidebar}>
+          <div style={styles.menu}>
+            {menuItems.map((item) => (
+              <div
+                key={item.name}
+                onClick={() => setActiveMenu(item.name)}
+                style={{
+                  ...styles.menuItem,
+                  backgroundColor:
+                    activeMenu === item.name ? "#000" : "transparent",
+                  color: activeMenu === item.name ? "#fff" : "#000",
+                }}
+              >
+                <span style={styles.icon}>{item.icon}</span>
+                {item.name}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Content */}
+        <div style={styles.content}>{renderContent()}</div>
+      </div>
+    </div>
   );
 };
 
-export default Seller_dashboard;
+export default SellerDashboard;
+
+const styles = {
+  wrapper: {
+    fontFamily: "Arial, sans-serif",
+  },
+
+ header: {
+  height: "60px",
+  backgroundColor: "#e0e0e0",
+  display: "flex",
+  alignItems: "center",
+  paddingLeft: "20px",
+  borderBottom: "1px solid #ccc",
+  fontSize: "26px",   // 🔥 increase this value (try 26–32px)
+  fontWeight: "bold", // optional: makes it look stronger
+},
+
+  container: {
+    display: "flex",
+    height: "calc(100vh - 60px)",
+  },
+
+  sidebar: {
+    width: "220px",
+    backgroundColor: "#a3a2a2",
+    padding: "20px 10px",
+  },
+
+  menu: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+  },
+
+  menuItem: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    padding: "10px",
+    cursor: "pointer",
+    borderRadius: "4px",
+    transition: "0.3s",
+    color: "#000", // 🔥 default black
+  },
+
+  icon: {
+    fontSize: "16px",
+  },
+
+  content: {
+    flex: 1,
+    padding: "20px",
+    backgroundColor: "#d8d4d4",
+  },
+
+  cardContainer: {
+    display: "flex",
+    gap: "20px",
+    marginTop: "20px",
+  },
+
+  card: {
+    flex: 1,
+    backgroundColor: "#e6e6e6",
+    padding: "40px 15px",
+    borderRadius: "6px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontSize: "30px",
+  },
+
+  iconBox: {
+    fontSize: "30px",
+    backgroundColor: "#ccc",
+    padding: "20px 10px",
+    borderRadius: "4px",
+  },
+
+  buttonContainer: {
+    display: "flex",
+    gap: "20px",
+    marginTop: "20px",
+  },
+
+  button: {
+    flex: 1,
+    padding: "20px 12px",
+    backgroundColor: "#555",
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    fontSize: "22px",
+  },
+};
