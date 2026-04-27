@@ -69,7 +69,7 @@ const Jobslist = () => {
 /* ================= YOUR ORIGINAL CSS ================= */
 .job-page { min-height: 100vh;
  height: auto; padding: 40px;
- color: #fff; position: relative; 
+ color: #0f0f0f; position: relative; 
  overflow-x: hidden; 
  font-family: Arial; 
  background: #cfcdcd;}
@@ -91,15 +91,15 @@ margin-top:20px; flex-wrap:wrap;
  border-radius:0px; border:none; width:260px; }
 .search-btn { padding:14px 20px; 
 border-radius:0px; border:none;
- background: #b8aeae; color:white; }
-.search-btn.active { background: linear-gradient(135deg,#f594ed,#eee01a); }
+ background: #c2bdbd; color:white; }
+.search-btn.active { background: gray; }
 
 .jobs { margin-top:20px; display:grid; 
 grid-template-columns:repeat(1,minmax(250px,1fr));
  gap:20px; z-index:2; position:relative; }
 
 .job-card {
-  background: rgb(153, 149, 149);
+  background: rgb(219, 215, 215);
   padding: 20px;
   border-radius: 0px;
   display: flex;
@@ -141,6 +141,7 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
   margin-top: 20px;
   padding: 20px;             /* increased spacing */
   background: rgba(247, 238, 238, 0.2);
+  color: black;
   width: 100%;               /* ✅ full width */
   max-width: 100%;           /* ✅ prevent overflow */
   box-sizing: border-box;    /* ✅ important */
@@ -149,18 +150,18 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
 background:rgba(255,255,255,0.2); 
 margin:15px 0; }
 .descriptionBox { padding:15px;
- background:rgba(255,255,255,0.08);
+ background:rgba(255,255,255,0.08); color: black;
   border-radius:0px; min-height:120px; }
 .applyBtn { padding:8px 10px;
- background:linear-gradient(135deg,#f594ed,#eee01a);
+ background: gray;
   border:none; border-radius:0px; font-weight:bold; }
 .actions { display:flex; gap:10px; }
 .uploadBtn { flex:1; text-align:center;
- padding:8px 10px; background:#2563eb;
+ padding:8px 10px; background:gray;
   border-radius:0px; cursor:pointer; }
 .submitBtn { flex:1; padding:8px 10px;
- background:#16a34a; border:none; border-radius:0px;
-  color:white; }
+ background: gray; border:none; border-radius:0px;
+  color:black; }
 
 /* ✅ NEW ONLY LAYOUT CSS */
 /* ✅ TOP BAR IMPROVED */

@@ -152,7 +152,7 @@ const styles = {
     background: "#b4b0b0",
     borderBottom: "1px solid #ccc",
     fontSize:"32px",
-    color:"white",
+    color:"black",
   },
 
   /* MAIN */
@@ -189,6 +189,7 @@ const styles = {
     padding: "10px",
     borderBottom: "1px solid #ddd",
     cursor: "pointer",
+    fontSize:"18px",
   },
 
   userIcon: {
@@ -213,7 +214,7 @@ const styles = {
     flex: 1,
     padding: "20px",
     overflowY: "auto",
-     background: "#ccc3c3",
+     background: "#d1caca",
   },
 
   row: {

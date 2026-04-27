@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Jobslist from "./Jobslist";
 import Admin from "./Adminpage";
 import Chat from "./Chat";
+import Seller from "./Seller_dashboard";
+import Register from "./Job_seeker";
 
 const HomePage = () => {
   const [page, setPage] = useState("home");
@@ -28,6 +30,10 @@ const HomePage = () => {
     { name: "Product 4", seller: "Seller D", category: "Category 1", location: "Chennai", image: "https://via.placeholder.com/80" },
     { name: "Product 5", seller: "Seller E", category: "Category 4", location: "Salem", image: "https://via.placeholder.com/80" },
     { name: "Product 6", seller: "Seller F", category: "Category 2", location: "Madurai", image: "https://via.placeholder.com/80" },
+    { name: "Product 7", seller: "Seller E", category: "Category 4", location: "Salem", image: "https://via.placeholder.com/80" },
+    { name: "Product 8", seller: "Seller F", category: "Category 2", location: "Madurai", image: "https://via.placeholder.com/80" },
+    { name: "Product 9", seller: "Seller E", category: "Category 4", location: "Salem", image: "https://via.placeholder.com/80" },
+    
   ];
 
   const filteredProducts = products.filter((p) => {
@@ -49,7 +55,8 @@ const HomePage = () => {
           <a onClick={() => setPage("jobs")}>Jobs</a>
           <a onClick={() => setPage("login")}>Login</a>
           <a onClick={() => setPage("chat")}>Chat</a>
-          <a>Register</a>
+          <a onClick={() => setPage("seller")}>Seller</a>
+          <a onClick={() => setPage("register")}>Register</a>
         </div>
       </div>
 
@@ -81,7 +88,9 @@ const HomePage = () => {
           </div>
 
           <div className="featured">
-            <h3>Featured Products</h3>
+            <div className="featured-title">
+  <span>Featured Products</span>
+</div>
             <div className="product-grid">
               {products.map((p, i) => (
                 <div key={i} className="product-card">
@@ -170,6 +179,8 @@ const HomePage = () => {
       {page === "jobs" && <Jobslist />}
       {page === "login" && <Admin />}
       {page === "chat" && <Chat />}
+      {page === "seller" && <Seller />}
+      {page === "register" && <Register />}
 
       <style>{`
 * {
@@ -185,6 +196,35 @@ html, body, #root {
   overflow-x: hidden;
 }
 
+.featured-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.featured-title::before,
+.featured-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: #888;
+}
+
+.featured-title span {
+  margin: 0 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-card h4 {
+  font-size: 14px;   /* smaller product name */
+}
+
+.product-card p {
+  font-size: 12px;   /* smaller seller name */
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -198,7 +238,7 @@ html, body, #root {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  background: #f8f8f8;
+  background: #ffffff;
   border-bottom: 1px solid #ccc;
 }
 
@@ -217,6 +257,7 @@ html, body, #root {
   padding: 50px 20px;
   background: #d1caca;
 }
+
 
 .search-box {
   margin-top: 10px;
@@ -239,29 +280,33 @@ html, body, #root {
 }
 
 .search-btn.active {
-  background: #ff5722;
+  background: #c9c1be;
+  color: black;
 }
 
 /* CATEGORIES */
 .categories {
   padding: 30px 10px;
   text-align: center;
+  font-size:24px;
 }
-
-.category-list {
+  .category-list {
   display: flex;
   justify-content: center;
   gap: 70px;
+  margin-top: 20px; /* 👈 add this */
 }
 
 .category-card {
   padding: 10px 45px;
   background: #d1caca;
+  font-size: 14px;   /* 👈 reduce only box text */
 }
 
 /* FEATURED */
 .featured {
   padding: 15px;
+  font-size:24px;
 }
 
 .product-grid {
@@ -275,6 +320,7 @@ html, body, #root {
   justify-content: space-between;
   padding: 10px;
   background: #a5a3a3;
+  margin-top:20px;
 }
 
 .product-img-right {

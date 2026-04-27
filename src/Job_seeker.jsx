@@ -49,8 +49,8 @@ const Job_seeker = () => {
                 ...styles.tab,
                 background:
                   activeTab === "My Applications"
-                    ? "#ee9999"
-                    : "linear-gradient(135deg, #ce0ce7, #f3f709)",
+                    ? "#bdb9b9"
+                    : "#858382)",
               }}
             >
               My Applications
@@ -61,7 +61,7 @@ const Job_seeker = () => {
               style={{
                 ...styles.tab,
                 background:
-                  activeTab === "Resume" ? "linear-gradient(135deg, #ce0ce7, #f3f709)" : "#e0b75d",
+                  activeTab === "Resume" ? "#b1afac" : "#858382",
               }}
             >
               Resume
@@ -103,6 +103,7 @@ const styles = {
     height: "100vh",
     display: "flex",
     flexDirection: "column",
+    background: "#c5c2c2",
   },
 
   /* TOP BAR */
@@ -111,14 +112,14 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 20px",
-    borderBottom: "1px solid #ccc",
-    background: "#0e0d0d",
+    borderBottom: "1px solid #858080",
+    background: "#a59f9f",
   },
 
   title: {
     fontWeight: "bold",
     fontSize:"32px",
-    color:"white",
+    color:"black",
   },
 
   topIcons: {
@@ -148,7 +149,7 @@ const styles = {
   sidebar: {
     width: "220px",
     borderRight: "1px solid #ccc",
-    background: "#0a0a0a",
+    background: "#979090",
   },
 
   menuItem: {
@@ -157,7 +158,7 @@ const styles = {
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    color:"white",
+    color:"black",
   },
 
   menuIcon: {
@@ -185,13 +186,13 @@ const styles = {
   box: {
     border: "1px solid #ccc",
     padding: "20px",
-    background: "#070707",
-    color:"white",
+    background: "#e9e5e5",
+    color:"black",
   },
 
   uploadBtn: {
     padding: "8px 12px",
-    background: "#ceaa36",
+    background: "#6d6c68",
     border: "none",
     margin: "10px 0",
     cursor: "pointer",
@@ -202,7 +203,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "10px",
     borderTop: "1px solid #ccc",
-    color:"white",
+    color:"black",
   },
 };
 

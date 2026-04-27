@@ -40,7 +40,7 @@ const Seller_dashboard = () => {
           min-height: 100vh;
           display: flex;
           flex-direction: column;
-          background: #0f172a;
+          background: #a3a3a7;
         }
 
         /* TOP BAR */
@@ -51,12 +51,12 @@ const Seller_dashboard = () => {
           justify-content: space-between;
           align-items: center;
           padding: 0 20px;
-          color: white;
+        
         }
 
         .topbar h2 {
           font-size: 38px;
-          color: #fff;
+          color: #0e0d0d;
         }
 
         .search-group {
@@ -76,92 +76,86 @@ const Seller_dashboard = () => {
           background: transparent;
           border: none;
           outline: none;
-          color: white;
+          color: black;
           width: 100px;
         }
 
         /* UNDER BAR */
-       .underbar {
-  display: flex;
-  align-items: flex-start;  /* ✅ important */
-  background: transparent;
-}
+        .underbar {
+          display: flex;
+          align-items: flex-start;
+        
+        }
 
         /* SIDEBAR */
-       .sidebar {
-  width: 220px;
-  padding: 20px;
-  background: transparent;
-  color: white;
-  position: relative;
-}
+        .sidebar {
+          width: 220px;
+          padding: 20px;
+          background: gray;
+          position: relative;
+        }
 
-/* IMPORTANT: make each item position relative */
-.sidebar li {
-  list-style: none;
-  padding: 14px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  transition: 0.3s;
-  z-index: 1;
-}
+        .sidebar li {
+          list-style: none;
+          padding: 14px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          position: relative;
+          transition: 0.3s;
+          z-index: 1;
+        }
 
-/* FULL BACKGROUND COVER EFFECT */
-.sidebar li.active::before {
-  content: "";
-  position: absolute;
-  left: -20px;        /* extends into sidebar padding */
-  top: 0;
-  width: calc(100% + 40px);
-  height: 100%;
-  background: rgba(255,255,255,0.25);
- 
-  z-index: -1;
-  transition: 0.3s;
-}
+        /* ✅ FIXED: removed overflow white strip */
+        .sidebar li.active::before {
+          content: "";
+          position: absolute;
+          left: 0;              /* FIX */
+          top: 0;
+          width: 100%;          /* FIX */
+          height: 100%;
+          background: rgba(255,255,255,0.25);
+          z-index: -1;
+          transition: 0.3s;
+        }
 
-/* hover effect */
-.sidebar li:hover::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: 0;
-  width: calc(100% + 40px);
-  height: 100%;
-  background: rgba(255,255,255,0.12);
-  
-  z-index: -1;
-}
+        .sidebar li:hover::before {
+          content: "";
+          position: absolute;
+          left: 0;              /* FIX */
+          top: 0;
+          width: 100%;          /* FIX */
+          height: 100%;
+          background: rgba(255,255,255,0.12);
+          z-index: -1;
+        }
 
         .icon {
           font-size: 18px;
         }
 
         /* RIGHT CONTENT */
-       .main {
-  padding: 20px;
-  margin: 20px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  color: white;
-  border-radius: 0px;
+        .main {
+          padding: 20px;
+          margin: 20px;
+          background: rgba(255,255,255,0.08);
+          backdrop-filter: blur(12px);
+          color: black;
+          border-radius: 0px;
 
-  display: inline-block;   /* ✅ shrink to content */
-  height: fit-content;     /* ✅ no extra height */
-  width: 90%;
-}
+          display: inline-block;
+          height: fit-content;
+          width: 90%;
+        }
 
         .welcome {
           font-size: 38px;
           margin-bottom: 10px;
           color: #fff;
           text-align: left;
-          
         }
 
         .row {
@@ -180,7 +174,7 @@ const Seller_dashboard = () => {
           justify-content: space-between;
           align-items: center;
           transition: 0.3s;
-          font-size:25px;
+          font-size: 25px;
         }
 
         .card:hover {

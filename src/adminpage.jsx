@@ -92,7 +92,7 @@ const styles = {
   },
 
   title: {
-    color: "gray",
+    color: "black",
     fontWeight: "bold",
     fontSize: "32px",
   },
