@@ -92,8 +92,8 @@ const SellerDashboard = () => {
                 style={{
                   ...styles.menuItem,
                   backgroundColor:
-                    activeMenu === item.name ? "#000" : "transparent",
-                  color: activeMenu === item.name ? "#fff" : "#000",
+                    activeMenu === item.name ? "#ee7373": "transparent",
+                  color: activeMenu === item.name ? "#0c0c0c" : "#000",
                 }}
               >
                 <span style={styles.icon}>{item.icon}</span>
@@ -158,8 +158,10 @@ const styles = {
     cursor: "pointer",
     borderRadius: "4px",
     transition: "0.3s",
-    color: "#000",
+    color: "#070707",
   },
+
+  
 
   icon: {
     fontSize: "18px",
@@ -195,6 +197,7 @@ const styles = {
     alignItems: "center",
     fontSize: "30px",
     border: "2px solid black",
+    color:"black"
   },
 
   iconBox: {

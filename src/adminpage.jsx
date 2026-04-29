@@ -25,10 +25,10 @@ const Adminpage = () => {
       <div style={styles.main}>
         {/* SIDEBAR */}
         <div style={styles.sidebar}>
-          <div style={styles.menuItem}>    👤 Manage Sellers</div>
-          <div style={styles.menuItem}>   📦 Manage Products</div>
+          <div style={styles.menuItem}>👤 Manage Sellers</div>
+          <div style={styles.menuItem}>📦 Manage Products</div>
           <div style={styles.menuItem}>✅ Job Approvals</div>
-          <div style={styles.menuItem}>📊User Reports</div>
+          <div style={styles.menuItem}>📊 User Reports</div>
         </div>
 
         {/* RIGHT SIDE */}

@@ -240,6 +240,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+  color:black;
 }
 
 .featured-title::before,
@@ -257,11 +258,13 @@ html, body, #root {
 }
 
 .product-card h4 {
-  font-size: 14px;   /* smaller product name */
+  font-size: 16px;   /* smaller product name */
+  color:black;
 }
 
 .product-card p {
-  font-size: 12px;   /* smaller seller name */
+  font-size: 15px;   /* smaller seller name */
+  color:black;
 }
 
 .container {
@@ -330,7 +333,8 @@ html, body, #root {
   padding: 30px 10px;
   text-align: center;
   font-size:24px;
-   background: linear-gradient(135deg, #f15c5c, #f1c07f);
+  background: linear-gradient(135deg, #f15c5c, #f1c07f);
+  color:black;
  
 }
   .category-list {
