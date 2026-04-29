@@ -170,7 +170,7 @@ const styles = {
     width: "25%",
     background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
     borderRight: "1px solid #0a0a0a",
-    color:"white",
+    color:"black",
     fontSize:"32px",
   },
 
@@ -179,7 +179,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "12px 15px",
-    fontWeight: "bold",
     borderBottom: "1px solid #0f0f0f",
   },
 
