@@ -78,7 +78,7 @@ const styles = {
     height: "100vh",
     display: "flex",
     flexDirection: "column",
-    background : " #d3caca",
+    background : " transparent",
   },
 
   /* TOP BAR */
@@ -88,7 +88,7 @@ const styles = {
     alignItems: "center",
     padding: "10px 20px",
     borderBottom: "1px solid #131212",
-    background: "#f8f3f3",
+    background: "transparent",
   },
 
   title: {
@@ -105,16 +105,17 @@ const styles = {
   searchBox: {
     display: "flex",
     alignItems: "center",
-    border: "1px solid #ccc",
+    border: "1px solid #0e0d0d",
     padding: "5px 8px",
     borderRadius: "4px",
-    background: "#fdf9f9",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
   },
 
   input: {
     border: "none",
     outline: "none",
     marginLeft: "5px",
+    background: "transparent",
   },
 
   /* MAIN */
@@ -146,7 +147,7 @@ const styles = {
  statsBar: {
   display: "flex",
   alignItems: "center",
-  background: "#dcdcdc",
+  background: "linear-gradient(135deg, #f15c5c, #f1c07f)",
   border: "1px solid #161616",
   marginBottom: "20px",
   color:"#1d1c1c",
@@ -169,13 +170,13 @@ divider: {
     background: "#1b1a1a",
     padding: "15px",
     textAlign: "center",
-    border: "1px solid #ccc",
+    border: "1px solid #070707",
   },
 
   graphBox: {
-    background: "#dcdcdc",
+    background: "linear-gradient(135deg, #f15c5c, #f1c07f)",
     padding: "20px",
-    border: "1px solid #201f1f",
+    border: "2px solid #0a0a0a",
   },
 };
 

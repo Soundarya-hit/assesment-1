@@ -121,12 +121,11 @@ const styles = {
   },
 
   header: {
-    height: "65px",
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "transparent",
     display: "flex",
     alignItems: "center",
     paddingLeft: "20px",
-    borderBottom: "1px solid #616161",
+    borderBottom: "1px solid #0e0d0d",
   },
 
   headerText: {
@@ -137,12 +136,11 @@ const styles = {
 
   container: {
     display: "flex",
-    height: "calc(100vh - 90px)",
   },
 
   sidebar: {
     width: "220px",
-    backgroundColor: "#a3a2a2",
+    backgroundColor: "linear-gradient(135deg, #f15c5c, #f1c07f)",
     padding: "20px 10px",
   },
 
@@ -170,7 +168,8 @@ const styles = {
   content: {
     flex: 1,
     padding: "20px",
-    backgroundColor: "#d8d4d4",
+    backgroundColor: "transparent",
+    border: "1px solid black",
   },
 
   /* 🔥 NEW POSITION STYLE */
@@ -188,20 +187,22 @@ const styles = {
 
   card: {
     flex: 1,
-    backgroundColor: "#e6e6e6",
+    backgroundColor: "linear-gradient(135deg, #f1c07f, #f15c5c)",
     padding: "40px 15px",
     borderRadius: "6px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     fontSize: "30px",
+    border: "2px solid black",
   },
 
   iconBox: {
     fontSize: "30px",
-    backgroundColor: "#ccc",
+    backgroundColor: "transparent",
     padding: "20px 10px",
     borderRadius: "4px",
+    border:"1px solid black",
   },
 
   buttonContainer: {
@@ -213,11 +214,12 @@ const styles = {
   button: {
     flex: 1,
     padding: "20px 12px",
-    backgroundColor: "#555",
-    color: "#fff",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
+    color: "#030303",
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
     fontSize: "22px",
+    border:"2px solid black",
   },
 };

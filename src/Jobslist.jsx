@@ -67,12 +67,12 @@ const Jobslist = () => {
 
 <style>{`
 /* ================= YOUR ORIGINAL CSS ================= */
-.job-page { min-height: 100vh;
+.job-page { 
  height: auto; padding: 40px;
  color: #0f0f0f; position: relative; 
  overflow-x: hidden; 
  font-family: Arial; 
- background: #cfcdcd;}
+ background: linear-gradient(135deg, #f1c07f, #f15c5c);}
 
 
 
@@ -88,18 +88,18 @@ gap:15px; justify-content:center;
 margin-top:20px; flex-wrap:wrap;
  z-index:2; position:relative; }
 .input-box { padding:14px 18px;
- border-radius:0px; border:none; width:260px; }
+ border-radius:0px; width:260px; background: transparent;}
 .search-btn { padding:14px 20px; 
-border-radius:0px; border:none;
- background: #c2bdbd; color:white; }
-.search-btn.active { background: gray; }
+border-radius:0px;
+ background: #f15c5c; color:black; }
+.search-btn.active { background: #f1c07f; }
 
 .jobs { margin-top:20px; display:grid; 
 grid-template-columns:repeat(1,minmax(250px,1fr));
- gap:20px; z-index:2; position:relative; }
+ gap:20px; z-index:2; position:relative;}
 
 .job-card {
-  background: rgb(219, 215, 215);
+  background: #f1c07f;
   padding: 20px;
   border-radius: 0px;
   display: flex;
@@ -115,9 +115,9 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
 
 .view-btn {
   padding: 10px 16px;
-  border: none;
+  border: 1px solid black;
   border-radius: 0px;
-  background: linear-gradient(135deg, #b3bbb6, #818884);
+  background: #f15c5c;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -140,7 +140,7 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
 .container {
   margin-top: 20px;
   padding: 20px;             /* increased spacing */
-  background: rgba(247, 238, 238, 0.2);
+  background: transparent;
   color: black;
   width: 100%;               /* ✅ full width */
   max-width: 100%;           /* ✅ prevent overflow */
@@ -150,23 +150,23 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
 background:rgba(255,255,255,0.2); 
 margin:15px 0; }
 .descriptionBox { padding:15px;
- background:rgba(255,255,255,0.08); color: black;
+ background:transparent; color: black;
   border-radius:0px; min-height:120px; }
 .applyBtn { padding:8px 10px;
- background: gray;
+ background: #f15c5c;
   border:none; border-radius:0px; font-weight:bold; }
 .actions { display:flex; gap:10px; }
 .uploadBtn { flex:1; text-align:center;
- padding:8px 10px; background:gray;
+ padding:8px 10px; background: #f1c07f;
   border-radius:0px; cursor:pointer; }
 .submitBtn { flex:1; padding:8px 10px;
- background: gray; border:none; border-radius:0px;
+ background: #f1c07f; border:none; border-radius:0px;
   color:black; }
 
 /* ✅ NEW ONLY LAYOUT CSS */
 /* ✅ TOP BAR IMPROVED */
 .top-header {
-  background: #dcdcdc;
+  background: linear-gradient(135deg, #f15c5c, #f1c07f,) ;
   padding: 15px 25px;
 
   display: flex;                 /* 🔥 main layout */
@@ -195,13 +195,13 @@ margin:15px 0; }
   border: 2px solid black;
   outline: none;
   border-radius: 4px;
+  background: transparent;
 }
 
 /* SEARCH BUTTON */
 .top-search-btn {
   padding: 8px 12px;
-  border: none;
-  background: gray;
+  background: transparent;
   color: black;
   cursor: pointer;
   border-radius: 4px;
@@ -216,7 +216,7 @@ margin:15px 0; }
 /* RIGHT SIDE */
 .right-side {
   flex: 1;
-  border-left: 1px solid rgba(121, 115, 115, 0.94);
+  border-left: 1px solid rgba(10, 10, 10, 0.94);
   padding-left: 20px;
   overflow: hidden;          /* ✅ stops overflow */
 }
@@ -228,21 +228,21 @@ margin:15px 0; }
 }
 
 .right-topbar {
-  background: #dcdcdc;
+  background: linear-gradient(135deg, #f15c5c, #f1c07f,);
   padding: 15px 20px;
 
   text-align: left;          /* ✅ move to left */
   font-size: 32px;           /* optional bigger */
   font-weight: bold;
 
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(3, 3, 3, 0.2);
 }
 
 .container h2 {
   text-align: left;     /* ✅ force left alignment */
   margin: 0 0 10px 0;   /* optional clean spacing */
   font-size: 32px;
-  color: #666;
+  color: #0f0f0f;
 }
 
 `}</style>

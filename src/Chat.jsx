@@ -69,7 +69,7 @@ const Chat = () => {
               style={{
                 ...styles.user,
                 background:
-                  activeChat === user ? "#717679" : "transparent",
+                  activeChat === user ? "linear-gradient(135deg, #f15c5c, #f1c07f)" : "transparent",
               }}
               onClick={() => setActiveChat(user)}
             >
@@ -143,14 +143,16 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     fontFamily: "Arial",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
+    
   },
 
   /* HEADER */
   header: {
   padding: "15px",
   fontWeight: "bold",
-  background: "#dcdcdc",
-  borderBottom: "1px solid #ccc",
+  background: "transparent",
+  borderBottom: "1px solid #0f0f0f",
   fontSize: "32px",
   color: "black",
 
@@ -166,8 +168,8 @@ const styles = {
 
   sidebar: {
     width: "25%",
-    background: "#bdbdb9",
-    borderRight: "1px solid #ccc",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
+    borderRight: "1px solid #0a0a0a",
     color:"white",
     fontSize:"32px",
   },
@@ -178,7 +180,7 @@ const styles = {
     alignItems: "center",
     padding: "12px 15px",
     fontWeight: "bold",
-    borderBottom: "1px solid #f7f0f0",
+    borderBottom: "1px solid #0f0f0f",
   },
 
   dropdown: {
@@ -190,7 +192,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     padding: "10px",
-    borderBottom: "1px solid #ddd",
+    borderBottom: "1px solid #0e0d0d",
     cursor: "pointer",
     fontSize:"18px",
   },
@@ -202,7 +204,7 @@ const styles = {
 
   onlineBtn: {
     fontSize: "10px",
-    background: "#979494",
+    background: "#f1c07f",
     padding: "3px 6px",
     borderRadius: "5px",
   },
@@ -217,7 +219,7 @@ const styles = {
     flex: 1,
     padding: "20px",
     overflowY: "auto",
-     background: "#d1caca",
+     background: "transparent",
   },
 
   row: {
@@ -230,35 +232,36 @@ const styles = {
     width: "28px",
     height: "28px",
     borderRadius: "50%",
-    background: "#8a8787",
+    background: "#f15c5c",
     margin: "0 8px",
   },
 
   message: {
-    background: "#a5a7a6",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
     padding: "10px 15px",
     borderRadius: "2px",
     maxWidth: "55%",
+    color: "black",
   },
 
   inputArea: {
     display: "flex",
     padding: "10px",
-    borderTop: "1px solid #ccc",
-    background: "#aaa9a7",
+    borderTop: "1px solid #181717",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
   },
 
   input: {
     flex: 1,
     padding: "10px",
-    border: "1px solid #ccc",
+    border: "1px solid #070707",
     borderRadius: "4px",
   },
 
   button: {
     marginLeft: "10px",
     padding: "10px 15px",
-    background: "#92908e",
+    background: "#f1c07f",
     border: "none",
     cursor: "pointer",
   },

@@ -28,7 +28,7 @@ const Job_seeker = () => {
               style={{
                 ...styles.menuItem,
                 background:
-                  activeMenu === item ? "#dcdcdc" : "transparent",
+                  activeMenu === item ? "linear-gradient(135deg, #f1c07f, #f15c5c)" : "#f1c07f",
               }}
             >
               <span style={styles.menuIcon}>
@@ -49,8 +49,8 @@ const Job_seeker = () => {
                 ...styles.tab,
                 background:
                   activeTab === "My Applications"
-                    ? "#cec6c6"
-                    : "#a1a09f",
+                    ? "linear-gradient(135deg, #f1c07f, #f15c5c)"
+                    : "#f1c07f",
               }}
             >
               My Applications
@@ -61,7 +61,7 @@ const Job_seeker = () => {
               style={{
                 ...styles.tab,
                 background:
-                  activeTab === "Resume" ? "#aaa8a6" : "#bebab7",
+                  activeTab === "Resume" ? "linear-gradient(135deg, #f1c07f, #f15c5c)" : "#f1c07f",
               }}
             >
               Resume
@@ -98,7 +98,7 @@ const styles = {
     height: "100vh",
     display: "flex",
     flexDirection: "column",
-    background: "#c5c2c2",
+    background: "transparent",
   },
 
   /* 🔥 TOP BAR */
@@ -107,8 +107,8 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "15px 20px",
-    borderBottom: "1px solid #858080",
-    background: "#ece6e6",
+    borderBottom: "1px solid #131212",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
   },
 
   title: {
@@ -126,7 +126,8 @@ const styles = {
   search: {
     width: "120px",
     height: "25px",
-    border: "1px solid #ccc",
+    border: "1px solid #070707",
+    background:"transparent",
   },
 
   icon: {
@@ -143,13 +144,13 @@ const styles = {
   /* SIDEBAR */
   sidebar: {
     width: "220px",
-    borderRight: "1px solid #ccc",
-    background: "#979090",
+    borderRight: "1px solid #131212",
+    background: "transparent",
   },
 
   menuItem: {
     padding: "15px",
-    borderBottom: "1px solid #ccc",
+    borderBottom: "1px solid #0f0f0f",
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
@@ -175,20 +176,20 @@ const styles = {
   tab: {
     padding: "10px 15px",
     cursor: "pointer",
-    border: "1px solid #ccc",
+    border: "1px solid #0a0a0a",
   },
 
   box: {
-    border: "1px solid #ccc",
+    border: "1px solid #0c0b0b",
     padding: "20px",
-    background: "#e9e5e5",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
     color: "black",
   },
 
   uploadBtn: {
     padding: "8px 12px",
-    background: "#6d6c68",
-    border: "none",
+    background: "linear-gradient(135deg, #f1c07f, #f15c5c)",
+    border: "1px solid black",
     margin: "10px 0",
     cursor: "pointer",
   },
@@ -197,7 +198,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     padding: "10px",
-    borderTop: "1px solid #ccc",
+    borderTop: "1px solid #0c0c0c",
     color: "black",
   },
 };

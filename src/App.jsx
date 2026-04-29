@@ -11,7 +11,6 @@ const HomePage = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
 
-  // NEW STATES
   const [activeSearch, setActiveSearch] = useState(false);
   const [activeProductIndex, setActiveProductIndex] = useState(null);
 
@@ -33,7 +32,6 @@ const HomePage = () => {
     { name: "Product 7", seller: "Seller E", category: "Category 4", location: "Salem", image: "https://via.placeholder.com/80" },
     { name: "Product 8", seller: "Seller F", category: "Category 2", location: "Madurai", image: "https://via.placeholder.com/80" },
     { name: "Product 9", seller: "Seller E", category: "Category 4", location: "Salem", image: "https://via.placeholder.com/80" },
-    
   ];
 
   const filteredProducts = products.filter((p) => {
@@ -63,12 +61,11 @@ const HomePage = () => {
       {/* HOME */}
       {page === "home" && (
         <div className="home-page">
+
           <div className="search-section">
             <h1>Search Products...</h1>
             <div className="search-box">
               <input type="text" placeholder="Search Products..." />
-              
-              {/* SEARCH BUTTON COLOR CHANGE */}
               <button
                 className={activeSearch ? "search-btn active" : "search-btn"}
                 onClick={() => setActiveSearch(!activeSearch)}
@@ -78,22 +75,41 @@ const HomePage = () => {
             </div>
           </div>
 
+          {/* CATEGORY CLICKABLE */}
           <div className="categories">
             <h3>Browse Categories</h3>
             <div className="category-list">
               {categories.map((cat, i) => (
-                <div key={i} className="category-card">{cat}</div>
+                <div
+                  key={i}
+                  className={`category-card ${selectedCategory === cat ? "active" : ""}`}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    setPage("products"); // 👈 go to product page
+                  }}
+                >
+                  {cat}
+                </div>
               ))}
             </div>
           </div>
 
+          {/* PRODUCT CARDS CLICKABLE */}
           <div className="featured">
             <div className="featured-title">
-  <span>Featured Products</span>
-</div>
+              <span>Featured Products</span>
+            </div>
+
             <div className="product-grid">
               {products.map((p, i) => (
-                <div key={i} className="product-card">
+                <div
+                  key={i}
+                  className={`product-card ${activeProductIndex === i ? "active" : ""}`}
+                  onClick={() => {
+                    setActiveProductIndex(i);
+                    setPage("products"); // 👈 open products page
+                  }}
+                >
                   <div>
                     <h4>{p.name}</h4>
                     <p>{p.seller}</p>
@@ -103,76 +119,75 @@ const HomePage = () => {
               ))}
             </div>
           </div>
+
         </div>
       )}
 
       {/* PRODUCTS */}
       {page === "products" && (
         <div className="products-page">
-  <div className="products-container">
+          <div className="products-container">
 
-   <div className="products-header">
-  <h2 className="header-title">Product Listing Page</h2>
-</div>
+            <div className="products-header">
+              <h2 className="header-title">Product Listing Page</h2>
+            </div>
 
-    <div className="products-layout">
-      
-      {/* SIDEBAR */}
-      <div className="sidebar">
-        <h2>Filters:</h2>
+            <div className="products-layout">
+              
+              <div className="sidebar">
+                <h2>Filters:</h2>
 
-        <div className="filter-box">
-          <label>Filter by Category</label>
-          <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-            <option value="">All Categories</option>
-            {categories.map((cat, i) => <option key={i}>{cat}</option>)}
-          </select>
-        </div>
+                <div className="filter-box">
+                  <label>Filter by Category</label>
+                  <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                    <option value="">All Categories</option>
+                    {categories.map((cat, i) => <option key={i}>{cat}</option>)}
+                  </select>
+                </div>
 
-        <div className="filter-box">
-          <label>Location</label>
-          <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
-            <option value="">All Locations</option>
-            {[...new Set(products.map(p => p.location))].map((loc, i) => (
-              <option key={i}>{loc}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* PRODUCT PANEL */}
-      <div className="product-panel">
-
-        <div className="panel-header">
-          <span>Product Name</span>
-          <button className="details-btn small">View Details</button>
-        </div>
-
-        <div className="product-list">
-          {filteredProducts.map((p, i) => (
-            <div key={i} className="product-row-new">
-
-              <div className="product-info">
-                <h4>{p.name}</h4>
-                <p>{p.seller}</p>
+                <div className="filter-box">
+                  <label>Location</label>
+                  <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
+                    <option value="">All Locations</option>
+                    {[...new Set(products.map(p => p.location))].map((loc, i) => (
+                      <option key={i}>{loc}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
-              <button
-                className={activeProductIndex === i ? "details-btn small active" : "details-btn small"}
-                onClick={() => setActiveProductIndex(i)}
-              >
-                View Details
-              </button>
+              <div className="product-panel">
+
+                <div className="panel-header">
+                  <span>Product Name</span>
+                  <button className="details-btn small">View Details</button>
+                </div>
+
+                <div className="product-list">
+                  {filteredProducts.map((p, i) => (
+                    <div key={i} className="product-row-new">
+
+                      <div className="product-info">
+                        <h4>{p.name}</h4>
+                        <p>{p.seller}</p>
+                      </div>
+
+                      <button
+                        className={activeProductIndex === i ? "details-btn small active" : "details-btn small"}
+                        onClick={() => setActiveProductIndex(i)}
+                      >
+                        View Details
+                      </button>
+
+                    </div>
+                  ))}
+                </div>
+
+              </div>
 
             </div>
-          ))}
+          </div>
         </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
       )}
 
       {/* OTHER PAGES */}
@@ -183,6 +198,30 @@ const HomePage = () => {
       {page === "register" && <Register />}
 
       <style>{`
+
+.container {
+  min-height: 100vh;
+ background: linear-gradient(135deg, #f1c07f, #f15c5c); 
+}
+
+/* CATEGORY */
+.category-card:hover {
+  border: 2px solid #000;
+}
+
+.category-card.active {
+  border: 2px solid #000;
+}
+
+/* PRODUCT CARD */
+.product-card:hover {
+  border: 2px solid #000;
+}
+
+.product-card.active {
+  border: 2px solid #000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -208,7 +247,7 @@ html, body, #root {
   content: "";
   flex: 1;
   height: 2px;
-  background: #888;
+  background: #c8d4d2;
 }
 
 .featured-title span {
@@ -237,14 +276,16 @@ html, body, #root {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  background: #ffffff;
-  border-bottom: 1px solid #ccc;
+  padding: 10px 40px;
+   background: linear-gradient(135deg, #f1c07f, #f15c5c);
+  border-bottom: 1px solid #8d0f0f;
 }
 
 .nav a {
   margin-left: 20px;
   cursor: pointer;
+  color:black;
+  font-size:22px;
 }
 
 .home-page,
@@ -255,7 +296,7 @@ html, body, #root {
 .search-section {
   text-align: center;
   padding: 50px 20px;
-  background: #d1caca;
+  background: linear-gradient(135deg, #f1c07f, #f15c5c);
 }
 
 
@@ -268,19 +309,19 @@ html, body, #root {
 .search-box input {
   width: 50%;
   padding: 10px;
+  background:transparent;
 }
 
 /* SEARCH BUTTON */
 .search-btn {
   padding: 10px;
-  background: #666;
+  background: transparent;
   color: white;
-  border: none;
   cursor: pointer;
 }
 
 .search-btn.active {
-  background: #c9c1be;
+  background: #e27a34;
   color: black;
 }
 
@@ -289,6 +330,8 @@ html, body, #root {
   padding: 30px 10px;
   text-align: center;
   font-size:24px;
+   background: linear-gradient(135deg, #f15c5c, #f1c07f);
+ 
 }
   .category-list {
   display: flex;
@@ -299,7 +342,7 @@ html, body, #root {
 
 .category-card {
   padding: 10px 45px;
-  background: #d1caca;
+  background: #f1c07f;
   font-size: 14px;   /* 👈 reduce only box text */
 }
 
@@ -307,6 +350,7 @@ html, body, #root {
 .featured {
   padding: 15px;
   font-size:24px;
+  background: linear-gradient(135deg, #f1c07f, #f15c5c);
 }
 
 .product-grid {
@@ -319,7 +363,7 @@ html, body, #root {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: #a5a3a3;
+  background: #d4c77d;
   margin-top:20px;
 }
 
@@ -331,15 +375,15 @@ html, body, #root {
 /* PRODUCTS PAGE */
 /* OUTER BOX */
 .products-container {
-  background: #e5e5e5;
+   background: linear-gradient(135deg, #f1c07f, #f15c5c);
   padding: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #161616;
 }
 
 /* HEADER BAR */
 .products-header {
-  background: #dcdcdc;
-  border: 1px solid #c5c5c5;
+   background: linear-gradient(135deg, #f1c07f, #f15c5c);
+  border: 1px solid #570404;
   margin-bottom: 10px;
 
   display: flex;
@@ -364,8 +408,8 @@ html, body, #root {
 /* SIDEBAR */
 .sidebar {
   width: 220px;
-  background: #efefef;
-  border: 1px solid #ccc;
+  background: transparent;
+  border: 1px solid #1a1919;
   padding: 15px;
 }
 
@@ -376,19 +420,22 @@ html, body, #root {
 .filter-box label {
   display: block;
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 18px;
+  color:black;
 }
 
 .filter-box select {
   width: 100%;
   padding: 10px;
+  background:transparent;
+  color:black;
 }
 
 /* RIGHT PANEL */
 .product-panel {
   flex: 1;
-  background: #f7f7f7;
-  border: 1px solid #ccc;
+  background: transparent;
+  border: 1px solid #0e0d0d;
   padding: 10px;
 }
 
@@ -396,9 +443,9 @@ html, body, #root {
 .panel-header {
   display: flex;
   justify-content: space-between;
-  background: #e0e0e0;
+  background: transparent;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #080808;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -415,9 +462,9 @@ html, body, #root {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #eeeeee;
+  background: transparent;
   padding: 10px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #080808;
 }
 
 /* TEXT */
@@ -428,14 +475,13 @@ html, body, #root {
 
 .product-info p {
   font-size: 12px;
-  color: #555;
+  color: #161616;
 }
 
 /* BUTTON */
 .details-btn {
-  background: #777;
-  color: white;
-  border: none;
+  background: #d4c77d;
+  color: black;
   cursor: pointer;
 }
 
@@ -445,7 +491,7 @@ html, body, #root {
 }
 
 .details-btn.active {
-  background: #999;
+  background: transparent;
 }
 
       `}</style>
