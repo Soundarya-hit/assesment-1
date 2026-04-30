@@ -80,8 +80,7 @@ const Jobslist = () => {
 top:0; left:0; width:100%; height:100%; 
 z-index:0; pointer-events:none; }
 
-.cap, .paper, .sparkle { position:absolute; 
-top:-50px; opacity:0.6; }
+
 
 .search-container { display:flex; 
 gap:15px; justify-content:center; 
@@ -115,7 +114,7 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
 
 .view-btn {
   padding: 10px 16px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 0px;
   background: #f15c5c;
   color: white;
@@ -147,7 +146,7 @@ grid-template-columns:repeat(1,minmax(250px,1fr));
   box-sizing: border-box;    /* ✅ important */
 }
 .line { height:1px; 
-background:rgba(255,255,255,0.2); 
+background:rgba(12, 12, 12, 0.2); 
 margin:15px 0; }
 .descriptionBox { padding:15px;
  background:transparent; color: black;
@@ -173,7 +172,7 @@ margin:15px 0; }
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid black;
 }
 
 /* LEFT SIDE */
@@ -209,20 +208,21 @@ margin:15px 0; }
 
 .main-layout {
   display:flex;
-  gap:40px;
   position:relative;
   z-index:2;
 }
 /* RIGHT SIDE */
 .right-side {
+  width:50%;
   flex: 1;
-  border-left: 1px solid rgba(10, 10, 10, 0.94);
+  border-left: 1px solid rgba(7, 6, 6, 0.94);
   padding-left: 20px;
   overflow: hidden;          /* ✅ stops overflow */
 }
 
 /* LEFT SIDE (optional spacing) */
 .left-side {
+width:50%;
   flex: 1;
   padding-right: 20px;
 }
@@ -235,7 +235,7 @@ margin:15px 0; }
   font-size: 32px;           /* optional bigger */
   font-weight: bold;
 
-  border-bottom: 1px solid rgba(3, 3, 3, 0.2);
+  border-bottom: 1px solid rgb(3, 3, 3);
 }
 
 .container h2 {
@@ -257,12 +257,7 @@ margin:15px 0; }
     Job Listings Page
   </div>
 
-  {/* RIGHT SIDE */}
-  <div className="header-right">
-    <input type="text" placeholder="Search..." className="top-search" />
-    <input type="text" placeholder="Location..." className="top-search" />
-    <button className="top-search-btn">🔍</button>
-  </div>
+
 
 </div>
 
